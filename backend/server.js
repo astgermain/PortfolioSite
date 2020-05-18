@@ -1,7 +1,16 @@
-const express = require("express");
-const app = express();
+const express = require("express")
+const app = express()
+const apiPort = 3000
 const cors = require('cors')
+const bodyParser = require('body-parser')
 
+const db = require('./db')
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
+app.use(bodyParser.json())
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.get("/", function(req, res) {
   res.send("Hello World!");
@@ -20,6 +29,4 @@ app.get("/users", function() {
       });
   });
 });
-app.listen(3000,function(){
-    console.log('Express app start on port 3000')
-});
+app.listen(apiPort, () => console.log('Express app start on port ${apiPort}'))
