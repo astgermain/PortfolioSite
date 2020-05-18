@@ -1,6 +1,6 @@
-var express = require("express");
-var app = express();
-var MongoClient = require("mongodb").MongoClient;
+const express = require("express");
+const app = express();
+const cors = require('cors')
 
 
 app.get("/", function(req, res) {
@@ -8,7 +8,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/users", function() {
-  MongoClient.connect("mongodb://localhost:27017/test", function(err, db) {
+  MongoClient.connect("mongodb://localhost:27017/main", function(err, db) {
     if (err) next
     db
       .collection("users")
