@@ -38,7 +38,7 @@ class DBAdmin extends Component {
     // our first get method that uses our backend api to
     // fetch data from our data base
     getDataFromDb = () => {
-      fetch('./api')
+      fetch('http://ec2-18-237-87-242.us-west-2.compute.amazonaws.com:4000/api/project')
         .then((data) => data.json())
         .then((res) => this.setState({ data: res.data }));
     };
