@@ -5,6 +5,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 
 const db = require('./db')
+const projectRouter = require('./routes/project-router')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
@@ -12,9 +13,12 @@ app.use(bodyParser.json())
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
+
 app.get("/", function(req, res) {
   res.send("Hello World!");
 });
+
+app.use('/api', projectRouter)
 
 app.get("/users", function() {
   MongoClient.connect("mongodb://localhost:27017/main", function(err, db) {
@@ -29,4 +33,4 @@ app.get("/users", function() {
       });
   });
 });
-app.listen(apiPort, () => console.log('Express app start on port ${apiPort}'))
+app.listen(apiPort, () => console.log('Express app start on port ' + apiPort))
