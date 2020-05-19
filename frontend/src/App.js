@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <DBAdmin />
+        <DBAdmin>HI</DBAdmin>
       </div>
     );
   }
