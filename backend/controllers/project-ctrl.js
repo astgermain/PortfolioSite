@@ -96,7 +96,7 @@ getProjectById = async (req, res) => {
         if (!project) {
             return res
                 .status(404)
-                .json({ success: true, error: `No Projects in Database` })
+                .json({ success: true, error: `No projects in database with this id` })
         }
         return res.status(200).json({ success: true, data: project })
     }).catch(err => console.log(err))
@@ -111,7 +111,7 @@ getProjects = async (req, res) => {
         if (!project.length) {
             return res
                 .status(404)
-                .json({ success: false, error: `Project not found` })
+                .json({ success: true, error: `No projects in database` })
         }
         return res.status(200).json({ success: true, data: project })
     }).catch(err => console.log(err))
