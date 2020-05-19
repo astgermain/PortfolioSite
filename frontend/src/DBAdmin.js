@@ -18,10 +18,7 @@ class DBAdmin extends Component {
     // changed and implement those changes into our UI
     componentDidMount() {
       this.getDataFromDb();
-      if (!this.state.intervalIsSet) {
-        let interval = setInterval(this.getDataFromDb, 1000);
-        this.setState({ intervalIsSet: interval });
-      }
+      
     }
   
     // never let a process live forever
