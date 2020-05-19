@@ -55,7 +55,7 @@ class DBAdmin extends Component {
         ++idToBeAdded;
       }
   
-      axios.post('http://localhost:3001/api/putData', {
+      axios.post('http://localhost:3000/api/putData', {
         id: idToBeAdded,
         message: message,
       });
@@ -72,7 +72,7 @@ class DBAdmin extends Component {
         }
       });
   
-      axios.delete('http://localhost:3001/api/deleteData', {
+      axios.delete('http://localhost:3000/api/deleteData', {
         data: {
           id: objIdToDelete,
         },
