@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class dbAdmin extends Component {
+class DBAdmin extends Component {
     // initialize our state
     state = {
       data: [],
@@ -162,4 +162,4 @@ class dbAdmin extends Component {
     }
   }
   
-  export default dbAdmin;
+  export default DBAdmin;

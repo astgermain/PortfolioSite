@@ -1,7 +1,7 @@
 // /client/App.js
 import React, { Component } from 'react';
 import axios from 'axios';
-import dbAdmin from './components/dbAdmin';
+import DBAdmin from './components/DBAdmin';
 
 class App extends Component {
   // initialize our state
@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <dbAdmin />
+        <DBAdmin />
       </div>
     );
   }
