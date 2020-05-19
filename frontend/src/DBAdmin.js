@@ -38,7 +38,7 @@ class DBAdmin extends Component {
     // our first get method that uses our backend api to
     // fetch data from our data base
     getDataFromDb = () => {
-      fetch('http://localhost/api/project')
+      fetch('./api/project')
         .then((data) => data.json())
         .then((res) => this.setState({ data: res.data }));
     };
@@ -52,7 +52,7 @@ class DBAdmin extends Component {
         ++idToBeAdded;
       }
   
-      axios.post('http://localhost/api/putData', {
+      axios.post('./api/putData', {
         id: idToBeAdded,
         message: message,
       });
@@ -69,7 +69,7 @@ class DBAdmin extends Component {
         }
       });
   
-      axios.delete('http://localhost/api/deleteData', {
+      axios.delete('./api/deleteData', {
         data: {
           id: objIdToDelete,
         },
@@ -87,7 +87,7 @@ class DBAdmin extends Component {
         }
       });
   
-      axios.post('http://localhost/api/updateData', {
+      axios.post('./api/updateData', {
         id: objIdToUpdate,
         update: { message: updateToApply },
       });
