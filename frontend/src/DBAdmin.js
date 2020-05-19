@@ -97,7 +97,7 @@ class DBAdmin extends Component {
     // it is easy to understand their functions when you
     // see them render into our screen
     render() {
-      const { data } = this.state;
+      const { data } = {};
       return (
         <div>
           <ul>
