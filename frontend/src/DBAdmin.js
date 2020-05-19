@@ -38,7 +38,7 @@ class DBAdmin extends Component {
     // our first get method that uses our backend api to
     // fetch data from our data base
     getDataFromDb = () => {
-      fetch('http://localhost:3000/api/project')
+      fetch('http://localhost/api/project')
         .then((data) => data.json())
         .then((res) => this.setState({ data: res.data }));
     };
@@ -52,7 +52,7 @@ class DBAdmin extends Component {
         ++idToBeAdded;
       }
   
-      axios.post('http://localhost:3000/api/putData', {
+      axios.post('http://localhost/api/putData', {
         id: idToBeAdded,
         message: message,
       });
@@ -64,12 +64,12 @@ class DBAdmin extends Component {
       parseInt(idTodelete);
       let objIdToDelete = null;
       this.state.data.forEach((dat) => {
-        if (dat.id == idTodelete) {
+        if (dat.id === idTodelete) {
           objIdToDelete = dat._id;
         }
       });
   
-      axios.delete('http://localhost:3000/api/deleteData', {
+      axios.delete('http://localhost/api/deleteData', {
         data: {
           id: objIdToDelete,
         },
@@ -82,12 +82,12 @@ class DBAdmin extends Component {
       let objIdToUpdate = null;
       parseInt(idToUpdate);
       this.state.data.forEach((dat) => {
-        if (dat.id == idToUpdate) {
+        if (dat.id === idToUpdate) {
           objIdToUpdate = dat._id;
         }
       });
   
-      axios.post('http://localhost:3001/api/updateData', {
+      axios.post('http://localhost/api/updateData', {
         id: objIdToUpdate,
         update: { message: updateToApply },
       });
@@ -105,6 +105,7 @@ class DBAdmin extends Component {
               ? 'NO DB ENTRIES YET'
               : data.map((dat) => (
                   <li style={{ padding: '10px' }} key={data.message}>
+                    <span style={{ color: 'gray' }}> id: </span> {dat.id} <br />
                     <span style={{ color: 'gray' }}> name: </span> {dat.name} <br />
                     <span style={{ color: 'gray' }}> link: </span> {dat.link} <br />
                     <span style={{ color: 'gray' }}> image: </span> {dat.image} 
