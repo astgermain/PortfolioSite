@@ -1,7 +1,7 @@
 // /client/App.js
 import React, { Component } from 'react';
 import axios from 'axios';
-import DBAdmin from './components/DBAdmin';
+import DBAdmin from './components/DBAdmin.js';
 
 class App extends Component {
   // initialize our state
