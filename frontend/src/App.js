@@ -1,6 +1,5 @@
-// /client/App.js
+import './App.css';
 import React, { Component } from 'react';
-import axios from 'axios';
 import DBAdmin from './DBAdmin';
 
 class App extends Component {
