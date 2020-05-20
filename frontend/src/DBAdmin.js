@@ -125,7 +125,7 @@ class DBAdmin extends Component {
               //should map to state and let it rerender itself
               : data.map((dat) => (
                 <li key={dat._id} style={{ padding: '10px' }} key={data.message}>
-                  <span style={{ color: 'gray' }}> id: </span>  <br />
+                  <span style={{ color: 'gray' }}> id: </span> {dat._id} <br />
                   <span style={{ color: 'gray' }}> name: </span> {dat.name} <br />
                   <span style={{ color: 'gray' }}> link: </span> {dat.link} <br />
                   <span style={{ color: 'gray' }}> image: </span> {dat.image} 
