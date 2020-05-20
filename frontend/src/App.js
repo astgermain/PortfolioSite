@@ -1,6 +1,23 @@
 import './App.css';
 import React, { Component } from 'react';
-import DBAdmin from './DBAdmin';
+import DBAdmin from './components/DBAdmin';
+import ContactButtons from './components/ContactButtons'
+import { createStore } from 'redux'
+
+function counter(state = 0, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
+  }
+}
+
+let store = createStore(counter)
+
+store.subscribe(() => console.log(store.getState()))
 
 class App extends Component {
   // initialize our state
@@ -10,6 +27,7 @@ class App extends Component {
 
   handleClick() {
     this.setState({ opened: !this.state.opened});
+    store.dispatch({ type: 'INCREMENT' })
   }
 
   // when component mounts, first thing it does is fetch all existing data in our db
@@ -37,7 +55,9 @@ class App extends Component {
       <div>
         <button className="btn btn-primary" onClick={() => this.handleClick()}>{dbAdminButton}</button>
         {dbAdmin}
+        <ContactButtons />
       </div>
+      
     );
   }
 }
