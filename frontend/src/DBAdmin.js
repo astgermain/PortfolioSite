@@ -38,14 +38,14 @@ class DBAdmin extends Component {
     // our first get method that uses our backend api to
     // fetch data from our data base
     getDataFromDb = () => {
-      fetch('http://localhost:4000/api/project')
+      fetch('http://127.0.0.1:4000/api/project')
         .then((data) => data.json())
         .then((res) => this.setState({ data: res.data }))
         .catch(err => this.setState({ data: [] }))
     };
 
     createProject = () => {
-      axios.post('http://localhost:4000/api/project', {
+      axios.post('http://127.0.0.1:4000/api/project', {
         name: this.state.name,
         link: this.state.link,
         image: this.state.image,
@@ -61,7 +61,7 @@ class DBAdmin extends Component {
         ++idToBeAdded;
       }
   
-      axios.post('http://localhost:4000/api/putData', {
+      axios.post('http://127.0.0.1:4000/api/putData', {
         id: idToBeAdded,
         message: message,
       });
@@ -70,7 +70,7 @@ class DBAdmin extends Component {
     // our delete method that uses our backend api
     // to remove existing database information
     deleteFromDB = (idTodelete) => {
-      axios.delete('http://localhost:4000/api/project/' + idTodelete, {
+      axios.delete('http://127.0.0.1:4000/api/project/' + idTodelete, {
         data: {
           _id: idTodelete,
         },
@@ -92,7 +92,7 @@ class DBAdmin extends Component {
         }
       });
   
-      axios.post('http://localhost/api/updateData', {
+      axios.post('http://127.0.0.1:4000/api/updateData', {
         id: objIdToUpdate,
         update: { message: updateToApply },
       });
