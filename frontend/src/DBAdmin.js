@@ -124,11 +124,14 @@ class DBAdmin extends Component {
               ? 'NO DB ENTRIES YET'
               //should map to state and let it rerender itself
               : data.map((dat) => (
-                <li key={dat._id} style={{ padding: '10px' }} key={data.message}>
+                <li key={dat._id} style={{ padding: '10px' }}>
                   <span style={{ color: 'gray' }}> id: </span> {dat._id} <br />
                   <span style={{ color: 'gray' }}> name: </span> {dat.name} <br />
                   <span style={{ color: 'gray' }}> link: </span> {dat.link} <br />
                   <span style={{ color: 'gray' }}> image: </span> {dat.image} 
+                  <button onClick={() => this.deleteFromDB(dat._id)}>
+                    DELETE
+                  </button>
                 </li>
               ))}
           </ul>
@@ -166,17 +169,7 @@ class DBAdmin extends Component {
               ADD
             </button>
           </div>
-          <div style={{ padding: '10px' }}>
-            <input
-              type="text"
-              style={{ width: '200px' }}
-              onChange={(e) => this.setState({ idToDelete: e.target.value })}
-              placeholder="put id of item to delete here"
-            />
-            <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
-              DELETE
-            </button>
-          </div>
+          
           <div style={{ padding: '10px' }}>
             <input
               type="text"

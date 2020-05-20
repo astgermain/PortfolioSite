@@ -110,8 +110,8 @@ getProjects = async (req, res) => {
         }
         if (!project.length) {
             return res
-                .status(404)
-                .json({ success: false, error: `Project not found` })
+                .status(200)
+                .json({ success: true, error: `No Projects` })
         }
         return res.status(200).json({ success: true, data: project })
     }).catch(err => console.log(err))
