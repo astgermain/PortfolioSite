@@ -11,6 +11,9 @@ class DBAdmin extends Component {
       idToDelete: null,
       idToUpdate: null,
       objectToUpdate: null,
+      name: null,
+      link: null,
+      image: null
     };
   
     // when component mounts, first thing it does is fetch all existing data in our db
@@ -24,10 +27,7 @@ class DBAdmin extends Component {
     // never let a process live forever
     // always kill a process everytime we are done using it
     componentWillUnmount() {
-      if (this.state.intervalIsSet) {
-        clearInterval(this.state.intervalIsSet);
-        this.setState({ intervalIsSet: null });
-      }
+      
     }
   
     // just a note, here, in the front end, we use the id key of our data object
@@ -38,9 +38,18 @@ class DBAdmin extends Component {
     // our first get method that uses our backend api to
     // fetch data from our data base
     getDataFromDb = () => {
-      fetch('./api/project')
+      fetch('http://localhost:4000/api/project')
         .then((data) => data.json())
-        .then((res) => this.setState({ data: res.data }));
+        .then((res) => this.setState({ data: res.data }))
+        .catch(err => this.setState({ data: [] }))
+    };
+
+    createProject = () => {
+      axios.post('http://localhost:4000/api/project', {
+        name: this.state.name,
+        link: this.state.link,
+        image: this.state.image,
+      });
     };
   
     // our put method that uses our backend api
@@ -52,7 +61,7 @@ class DBAdmin extends Component {
         ++idToBeAdded;
       }
   
-      axios.post('./api/putData', {
+      axios.post('http://localhost:4000/api/putData', {
         id: idToBeAdded,
         message: message,
       });
@@ -61,20 +70,16 @@ class DBAdmin extends Component {
     // our delete method that uses our backend api
     // to remove existing database information
     deleteFromDB = (idTodelete) => {
-      parseInt(idTodelete);
-      let objIdToDelete = null;
-      this.state.data.forEach((dat) => {
-        if (dat.id === idTodelete) {
-          objIdToDelete = dat._id;
-        }
-      });
-  
-      axios.delete('./api/deleteData', {
+      axios.delete('http://localhost:4000/api/project/' + idTodelete, {
         data: {
-          id: objIdToDelete,
+          _id: idTodelete,
         },
-      });
-    };
+
+      })
+      .catch(function (error){
+        console.log("Yo");
+      }
+    )};
   
     // our update method that uses our backend api
     // to overwrite existing data base information
@@ -87,31 +92,65 @@ class DBAdmin extends Component {
         }
       });
   
-      axios.post('./api/updateData', {
+      axios.post('http://localhost/api/updateData', {
         id: objIdToUpdate,
         update: { message: updateToApply },
       });
     };
+
+    
   
     // here is our UI
     // it is easy to understand their functions when you
     // see them render into our screen
     render() {
-      const { data } = {};
+      let data = this.state.data
+      let dl = 0
+      try{
+        dl = data.length
+      }
+      catch{
+        dl = 0
+      }
+      
       return (
         <div>
           <ul>
-            {data.length <= 0
+            {dl <= 0
               ? 'NO DB ENTRIES YET'
+              //should map to state and let it rerender itself
               : data.map((dat) => (
-                  <li style={{ padding: '10px' }} key={data.message}>
-                    <span style={{ color: 'gray' }}> id: </span> {dat.id} <br />
-                    <span style={{ color: 'gray' }}> name: </span> {dat.name} <br />
-                    <span style={{ color: 'gray' }}> link: </span> {dat.link} <br />
-                    <span style={{ color: 'gray' }}> image: </span> {dat.image} 
-                  </li>
-                ))}
+                <li style={{ padding: '10px' }} key={data.message}>
+                  <span style={{ color: 'gray' }}> id: </span> {dat._id} <br />
+                  <span style={{ color: 'gray' }}> name: </span> {dat.name} <br />
+                  <span style={{ color: 'gray' }}> link: </span> {dat.link} <br />
+                  <span style={{ color: 'gray' }}> image: </span> {dat.image} 
+                </li>
+              ))}
           </ul>
+          <div style={{ padding: '10px' }}>
+            <input
+              type="text"
+              onChange={(e) => this.setState({ name: e.target.value })}
+              placeholder="Project Name"
+              style={{ width: '200px' }}
+            />
+            <input
+              type="text"
+              onChange={(e) => this.setState({ link: e.target.value })}
+              placeholder="Project Link"
+              style={{ width: '200px' }}
+            />
+            <input
+              type="text"
+              onChange={(e) => this.setState({ image: e.target.value })}
+              placeholder="Project Image"
+              style={{ width: '200px' }}
+            />
+            <button onClick={() => this.createProject(this.state.message)}>
+              CREATE
+            </button>
+          </div>
           <div style={{ padding: '10px' }}>
             <input
               type="text"

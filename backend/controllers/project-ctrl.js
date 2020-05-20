@@ -84,7 +84,7 @@ deleteProject = async (req, res) => {
         }
 
         return res.status(200).json({ success: true, data: project })
-    }).catch(err => console.log(err))
+    }).catch()
 }
 
 getProjectById = async (req, res) => {
@@ -99,7 +99,7 @@ getProjectById = async (req, res) => {
                 .json({ success: false, error: `Project not found` })
         }
         return res.status(200).json({ success: true, data: project })
-    }).catch(err => console.log(err))
+    }).catch(err => handleInvalid())
 }
 
 getProjects = async (req, res) => {
@@ -115,6 +115,10 @@ getProjects = async (req, res) => {
         }
         return res.status(200).json({ success: true, data: project })
     }).catch(err => console.log(err))
+}
+
+handleInvalid = () => {
+    console.log('Hi');
 }
 
 module.exports = {
