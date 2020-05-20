@@ -37,15 +37,18 @@ class DBAdmin extends Component {
   
     // our first get method that uses our backend api to
     // fetch data from our data base
+    
     getDataFromDb = () => {
-      fetch('http://127.0.0.1:4000/api/project')
+      let url = window.location.hostname
+      fetch('http://' + url + ':4000/api/project')
         .then((data) => data.json())
         .then((res) => this.setState({ data: res.data }))
         .catch(err => this.setState({ data: [] }))
     };
 
     createProject = () => {
-      axios.post('http://127.0.0.1:4000/api/project', {
+      let url = window.location.hostname
+      axios.post('http://' + url + ':4000/api/project', {
         name: this.state.name,
         link: this.state.link,
         image: this.state.image,
@@ -60,8 +63,8 @@ class DBAdmin extends Component {
       while (currentIds.includes(idToBeAdded)) {
         ++idToBeAdded;
       }
-  
-      axios.post('http://127.0.0.1:4000/api/putData', {
+      let url = window.location.hostname
+      axios.post('http://' + url + ':4000/api/putData', {
         id: idToBeAdded,
         message: message,
       });
@@ -70,7 +73,8 @@ class DBAdmin extends Component {
     // our delete method that uses our backend api
     // to remove existing database information
     deleteFromDB = (idTodelete) => {
-      axios.delete('http://127.0.0.1:4000/api/project/' + idTodelete, {
+      let url = window.location.hostname
+      axios.delete('http://' + url + ':4000/api/project/' + idTodelete, {
         data: {
           _id: idTodelete,
         },
@@ -91,8 +95,8 @@ class DBAdmin extends Component {
           objIdToUpdate = dat._id;
         }
       });
-  
-      axios.post('http://127.0.0.1:4000/api/updateData', {
+      let url = window.location.hostname
+      axios.post('http://' + url + ':4000/api/updateData', {
         id: objIdToUpdate,
         update: { message: updateToApply },
       });
@@ -120,8 +124,8 @@ class DBAdmin extends Component {
               ? 'NO DB ENTRIES YET'
               //should map to state and let it rerender itself
               : data.map((dat) => (
-                <li style={{ padding: '10px' }} key={data.message}>
-                  <span style={{ color: 'gray' }}> id: </span> {dat._id} <br />
+                <li key={dat._id} style={{ padding: '10px' }} key={data.message}>
+                  <span style={{ color: 'gray' }}> id: </span>  <br />
                   <span style={{ color: 'gray' }}> name: </span> {dat.name} <br />
                   <span style={{ color: 'gray' }}> link: </span> {dat.link} <br />
                   <span style={{ color: 'gray' }}> image: </span> {dat.image} 
