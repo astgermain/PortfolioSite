@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions";
+import DBAdmin from './DBAdmin';
+
 class Dashboard extends Component {
     state = {
         opened: false
@@ -14,7 +16,6 @@ class Dashboard extends Component {
 
     handleClick() {
         this.setState({ opened: !this.state.opened});
-        store.dispatch({ type: 'INCREMENT' })
     }
     render() {
         const { user } = this.props.auth;
