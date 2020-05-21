@@ -27,10 +27,14 @@ class Dashboard extends Component {
                     <div className="col s12 center-align">
                         <h4>
                             <b>Hey there,</b> {user.name.split(" ")[0]} 👏
-                            <p className="flow-text grey-text text-darken-1">
-                                <button className="btn btn-primary" onClick={() => this.handleClick()}>{dbAdminButton}</button>
-                                {dbAdmin}
-                            </p>
+                                {user.admin === true ? 
+                                <div>
+                                    <button className="btn btn-primary" onClick={() => this.handleClick()}>{dbAdminButton}</button>
+                                    {dbAdmin}
+                                </div>
+                                 : 'You are not an admin for this site. Please request access if you need it. User features coming soon.'
+                                }
+                                
                         </h4>
                         <button
                         style={{

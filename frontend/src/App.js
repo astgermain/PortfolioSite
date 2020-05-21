@@ -12,6 +12,7 @@ import ContactButtons from './components/ContactButtons'
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
 import Home from './components/Home';
+import Header from './components/Header';
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/Dashboard";
 
@@ -63,7 +64,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>  
-            <ContactButtons />
+            <Header />
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={RegisterModal} />
             <Route exact path="/login" component={LoginModal} />

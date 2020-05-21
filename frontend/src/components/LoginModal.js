@@ -6,10 +6,6 @@ import { loginUser } from "../actions/authActions";
 import classnames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import axios from 'axios';
-
-
-
 
 class LoginModal extends Component {
 
@@ -27,12 +23,11 @@ class LoginModal extends Component {
             this.props.history.push("/dashboard");
         }
     }
-
-    componentWillReceiveProps(nextProps) {
+    componentWillUpdate(nextProps){
         if(nextProps.auth.isAuthenticated) {
             this.props.history.push("/dashboard"); // push user to dashboard when they login
         }
-        if(nextProps.errors) {
+        if(nextProps.errors !== this.props.errors) {
             this.setState({
                 errors: nextProps.errors
             });
@@ -61,7 +56,7 @@ class LoginModal extends Component {
                         <b>Login</b> below
                     </h4>
                     <p className="grey-text text-darken-1">
-                        Don't have an account? <Link to="/register">Register</Link>
+                        Don't have an account? <Link to="/register" className="links">Register</Link>
                     </p>
                 </div>
                 <form noValidate onSubmit={this.onSubmit}>

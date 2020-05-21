@@ -6,8 +6,6 @@ import { registerUser } from "../actions/authActions";
 import classnames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import axios from 'axios';
-
 
 class RegisterModal extends Component {
 
@@ -28,8 +26,8 @@ class RegisterModal extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.errors) {
+    componentWillUpdate(nextProps) {
+        if(nextProps.errors !== this.props.errors) {
             this.setState({
                 errors: nextProps.errors
             });
@@ -61,7 +59,7 @@ class RegisterModal extends Component {
                         <b>Register</b> below
                     </h4>
                     <p className="grey-text text-darken-1">
-                        Already have an account? <Link to="/login">Log in</Link>
+                        Already have an account? <Link to="/login" className="links">Log in</Link>
                     </p>
                 </div>
                 <form noValidate onSubmit={this.onSubmit}>

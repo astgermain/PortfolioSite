@@ -9,6 +9,15 @@ body {
 .App {
   text-align: center;
 }
+.links {
+  font-weight: 600
+}
+.links:hover {
+  
+}
+.links:visited {
+  color: white
+}
 
 .App-logo {
   height: 40vmin;
