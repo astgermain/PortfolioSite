@@ -1,34 +1,43 @@
 import './App.css';
 import React, { Component } from 'react';
-import DBAdmin from './components/DBAdmin';
-import ContactButtons from './components/ContactButtons'
-import { createStore } from 'redux'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utils/setAuthToken";
+import { setCurrentUser, logoutUser } from "./actions/authActions";
 
-function counter(state = 0, action) {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
-    default:
-      return state
+import { Provider } from "react-redux";
+import store from "./store";
+
+import ContactButtons from './components/ContactButtons'
+import LoginModal from './components/LoginModal';
+import RegisterModal from './components/RegisterModal';
+import Home from './components/Home';
+import PrivateRoute from "./components/private-route/PrivateRoute";
+import Dashboard from "./components/Dashboard";
+
+// Check for token to keep user logged in
+if (localStorage.jwtToken) {
+  // Set auth token header auth
+  const token = localStorage.jwtToken;
+  setAuthToken(token);
+  // Decode token and get user info and exp
+  const decoded = jwt_decode(token);
+  // Set user and isAuthenticated
+  store.dispatch(setCurrentUser(decoded));
+// Check for expired token
+  const currentTime = Date.now() / 1000; // to get in milliseconds
+  if (decoded.exp < currentTime) {
+    // Logout user
+    store.dispatch(logoutUser());
+    // Redirect to login
+    window.location.href = "./login";
   }
 }
 
-let store = createStore(counter)
-
-store.subscribe(() => console.log(store.getState()))
 
 class App extends Component {
   // initialize our state
-  state = {
-    opened: false
-  };
-
-  handleClick() {
-    this.setState({ opened: !this.state.opened});
-    store.dispatch({ type: 'INCREMENT' })
-  }
+  
 
   // when component mounts, first thing it does is fetch all existing data in our db
   // then we incorporate a polling logic so that we can easily see if our db has
@@ -49,14 +58,21 @@ class App extends Component {
   
 
   render() {
-    const dbAdmin = this.state.opened ? <DBAdmin/> : ''
-    const dbAdminButton = this.state.opened ? 'Close DB Admin' : 'Open DB Admin'
+    
     return (
-      <div>
-        <button className="btn btn-primary" onClick={() => this.handleClick()}>{dbAdminButton}</button>
-        {dbAdmin}
-        <ContactButtons />
-      </div>
+      <Provider store={store}>
+        <Router>
+          <div>  
+            <ContactButtons />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/register" component={RegisterModal} />
+            <Route exact path="/login" component={LoginModal} />
+            <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
+          </div>
+        </Router>
+      </Provider>
       
     );
   }
