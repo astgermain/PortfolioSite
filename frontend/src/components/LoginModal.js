@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/authActions";
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 
 
 class LoginModal extends Component {
@@ -60,10 +60,11 @@ class LoginModal extends Component {
             }
             return null
         })
-        //const passwordIcon = <FontAwesomeIcon icon={faCoffee} />
+        const emailIcon = <FontAwesomeIcon icon={faEnvelope} color="#bfbfbf" />
+        const passwordIcon = <FontAwesomeIcon icon={faLock} color="#bfbfbf" />
         return(
             <div className="container-fluid">
-                <div className="loginForm">
+                <div className="formView">
                     <div className="row justify-content-md-center">
                         <div className="col-md-auto">
                             <h4>
@@ -85,9 +86,9 @@ class LoginModal extends Component {
                                     {alertItems}
                                 </div>
                             :
-                            ""}
+                                ""}
                             <div className="row">
-                                <div className="col">
+                                <div className="col formField" >
                                     <input
                                     onChange={this.onChange}
                                     value={this.state.email}
@@ -96,6 +97,7 @@ class LoginModal extends Component {
                                     type="email"
                                     className="form-control"
                                     />
+                                    <label htmlFor="email" className="labelIcon">{emailIcon}</label>
                                     {this.state.email === "" ? 
                                         <div className="selectedInput">Email</div>
                                     :
@@ -106,7 +108,7 @@ class LoginModal extends Component {
                         </div>
                         <div className="form-group">
                             <div className="row">
-                                <div className="col">
+                                <div className="col formField">
                                     <input
                                     onChange={this.onChange}
                                     value={this.state.password}
@@ -115,6 +117,7 @@ class LoginModal extends Component {
                                     type="password"
                                     className="form-control"
                                     />
+                                    <label htmlFor="password" className="labelIcon">{passwordIcon}</label>
                                     {this.state.password === "" ? 
                                         <div className="selectedInput">Password</div>
                                     :
@@ -124,9 +127,11 @@ class LoginModal extends Component {
                             </div>
                         </div>
                         <div className="row justify-content-md-center">
-                            <button className="btn-block btn-primary" type="submit">
-                                Login
-                            </button>
+                            <div className="col">
+                                <button className="btn-block btn-primary" type="submit">
+                                    Login
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>

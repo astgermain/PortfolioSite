@@ -13,24 +13,61 @@ body {
   font-weight: 600;
   color: #007bff;
 }
+.formField {
+  display: inline-flex;
+}
+.labelIcon {
+  border-radius: .25rem;
+  width: 50px;
+  margin: 0;
+  background-color: #363b41;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  line-height: 36px;
+  border: 1px solid #4b6abd;
+  border-right: 0;
+  left: 15px;
+  position: absolute;
+  transition: 450ms;
+}
 
 .form-control {
   background-color: #3b4148;
   color: #e8e8e8;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border: 1px solid #4b6abd;
+  border-left: 0;
+  margin-left: 50px;
+  transition: 500ms;
 }
+
+
 
 .form-control:focus {
   background-color: #282c34;
   color: white;
 }
 
-.loginForm {
+.formView {
   width: 100%;
-  max-width: 330px;
-  padding: 15px;
+  max-width: 375px;
+  padding: 20px;
   margin: auto;
-  background: white;
-  color: black;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+  background: #2e333e;
+  color: #e8e8e8;
+}
+
+.alert {
+  padding: 0.1rem 1.25rem;
+  margin-bottom: .5rem;
+}
+
+.btn-primary {
+  outline: 0;
+  border-radius: .25rem;
+  height: calc(1.5em + .75rem + 2px);
 }
 
 .selectedInput {
@@ -38,15 +75,21 @@ body {
   color: #bfbfbf;
   pointer-events: none;
   bottom: 6px;
-  left: 25px;
+  left: 75px;
   transition: transform 350ms cubic-bezier(0.4,0,0.2,1),opacity 350ms cubic-bezier(0.4,0,0.2,1);
 }
-.form-control:focus + .hasInput {
+
+.form-control:focus {
+  box-shadow: none;
+  transition: 950ms;
+}
+
+.form-control:focus ~ .hasInput {
   position: absolute;
   color: #495057;
   pointer-events: none;
   bottom: 6px;
-  left: 25px;
+  left: 75px;
   color: #1a73e8;
   transform: scale(.75) translateY(-27px);
   background: #282c34;
@@ -56,13 +99,18 @@ body {
   transition-property: color,bottom,transform;
 }
 
+.form-control:focus + .labelIcon {
+  border-color: #80bdff;
+  transition: 1000ms;
+}
+
 .hasInput{
   position: absolute;
   color: #495057;
   pointer-events: none;
   bottom: 6px;
-  left: 25px;
-  color: #1a73e8;
+  left: 75px;
+  color: transparent;
   transform: scale(.75) translateX(-6px) translateY(-40px);
   padding: 0px 10px 0px 10px;
   transform-origin: bottom left;
@@ -71,7 +119,7 @@ body {
 }
 
 
-.form-control:focus + .selectedInput{
+.form-control:focus ~ .selectedInput{
   color: #1a73e8;
   transform: scale(.75) translateY(-27px);
   background: #282c34;
