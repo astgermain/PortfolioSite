@@ -120,7 +120,7 @@ class RegisterModal extends Component {
                                 value={this.state.email}
                                 error={errors.email}
                                 id="email"
-                                type="email"
+                                type="text"
                                 className="form-control"
                                 />
                                 <label htmlFor="email" className="labelIcon">{emailIcon}</label>
@@ -140,7 +140,7 @@ class RegisterModal extends Component {
                                 value={this.state.password}
                                 error={errors.password}
                                 id="password"
-                                type="password"
+                                type="text"
                                 className="form-control"
                                 />
                                 <label htmlFor="password" className="labelIcon">{passwordIcon}</label>
