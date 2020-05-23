@@ -10,13 +10,75 @@ body {
   text-align: center;
 }
 .links {
-  font-weight: 600
+  font-weight: 600;
+  color: #007bff;
 }
-.links:hover {
-  
+
+.form-control {
+  background-color: #3b4148;
+  color: #e8e8e8;
 }
-.links:visited {
-  color: white
+
+.form-control:focus {
+  background-color: #282c34;
+  color: white;
+}
+
+.loginForm {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  background: white;
+  color: black;
+}
+
+.selectedInput {
+  position: absolute;
+  color: #bfbfbf;
+  pointer-events: none;
+  bottom: 6px;
+  left: 25px;
+  transition: transform 350ms cubic-bezier(0.4,0,0.2,1),opacity 350ms cubic-bezier(0.4,0,0.2,1);
+}
+.form-control:focus + .hasInput {
+  position: absolute;
+  color: #495057;
+  pointer-events: none;
+  bottom: 6px;
+  left: 25px;
+  color: #1a73e8;
+  transform: scale(.75) translateY(-27px);
+  background: #282c34;
+  padding: 0px 10px 0px 10px;
+  transform-origin: bottom left;
+  transition: all .3s cubic-bezier(0.4,0,0.2,1);
+  transition-property: color,bottom,transform;
+}
+
+.hasInput{
+  position: absolute;
+  color: #495057;
+  pointer-events: none;
+  bottom: 6px;
+  left: 25px;
+  color: #1a73e8;
+  transform: scale(.75) translateX(-6px) translateY(-40px);
+  padding: 0px 10px 0px 10px;
+  transform-origin: bottom left;
+  transition: all .3s cubic-bezier(0.4,0,0.2,1);
+  transition-property: color,bottom,transform;
+}
+
+
+.form-control:focus + .selectedInput{
+  color: #1a73e8;
+  transform: scale(.75) translateY(-27px);
+  background: #282c34;
+  padding: 0px 10px 0px 10px;
+  transform-origin: bottom left;
+  transition: all .3s cubic-bezier(0.4,0,0.2,1);
+  transition-property: color,bottom,transform;
 }
 
 .App-logo {

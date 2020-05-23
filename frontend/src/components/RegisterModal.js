@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../actions/authActions";
-import classnames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
@@ -63,71 +62,76 @@ class RegisterModal extends Component {
                     </p>
                 </div>
                 <form noValidate onSubmit={this.onSubmit}>
-                    <div className="input-field col s12">
+                    <div className="form-group">
+                        {errors.name ? 
+                            <div className="alert alert-danger" role="alert">
+                                {errors.name}
+                            </div>
+                        :
+                        ""}
+                        <label htmlFor="name">Name</label>
                         <input
                         onChange={this.onChange}
                         value={this.state.name}
                         error={errors.name}
                         id="name"
                         type="text"
-                        className={classnames("", {
-                            invalid: errors.name
-                        })}
+                        className="form-control"
                         />
-                        <label htmlFor="name">Name</label>
-                        <span className="red-text">{errors.name}</span>
                     </div>
-                    <div className="input-field col s12">
+                    <div className="form-group">
+                        {errors.email ? 
+                            <div className="alert alert-danger" role="alert">
+                                {errors.email}
+                            </div>
+                        :
+                        ""}
+                        <label htmlFor="email">Email</label>
                         <input
                         onChange={this.onChange}
                         value={this.state.email}
                         error={errors.email}
                         id="email"
                         type="email"
-                        className={classnames("", {
-                            invalid: errors.email
-                        })}
+                        className="form-control"
                         />
-                        <label htmlFor="email">Email</label>
-                        <span className="red-text">{errors.email}</span>
                     </div>
-                    <div className="input-field col s12">
+                    <div className="form-group">
+                        {errors.password ? 
+                            <div className="alert alert-danger" role="alert">
+                                {errors.password}
+                            </div>
+                        :
+                        ""}
+                        <label htmlFor="password">Password</label>
                         <input
                         onChange={this.onChange}
                         value={this.state.password}
                         error={errors.password}
                         id="password"
                         type="password"
-                        className={classnames("", {
-                            invalid: errors.password
-                        })}
+                        className="form-control"
                         />
-                        <label htmlFor="password">Password</label>
-                        <span className="red-text">{errors.password}</span>
                     </div>
-                    <div className="input-field col s12">
+                    <div className="form-group">
+                        {errors.password2 ? 
+                            <div className="alert alert-danger" role="alert">
+                                {errors.password2}
+                            </div>
+                        :
+                        ""}
+                        <label htmlFor="password2">Confirm Password</label>
                         <input
                         onChange={this.onChange}
                         value={this.state.password2}
                         error={errors.password2}
                         id="password2"
                         type="password"
-                        className={classnames("", {
-                            invalid: errors.password2
-                        })}
+                        className="form-control"
                         />
-                        <label htmlFor="password2">Confirm Password</label>
-                        <span className="red-text">{errors.password2}</span>
                     </div>
                     <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                        <button style={{
-                            width: "150px",
-                            borderRadius: "3px",
-                            letterSpacing: "1.5px",
-                            marginTop: "1rem"
-                        }}
-                        type="submit"
-                        className="btn btn-large waves-effect waves-light hoverable blue accent-3">
+                        <button className="btn btn-primary" type="submit">
                         Sign up
                         </button>
                     </div>

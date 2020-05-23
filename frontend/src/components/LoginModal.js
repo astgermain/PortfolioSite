@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/authActions";
-import classnames from "classnames";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 class LoginModal extends Component {
 
@@ -46,70 +46,90 @@ class LoginModal extends Component {
         };
         this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
     };
+    
 
     render(){
         const { errors } = this.state;
-        return(
-            <div>
-                <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                    <h4>
-                        <b>Login</b> below
-                    </h4>
-                    <p className="grey-text text-darken-1">
-                        Don't have an account? <Link to="/register" className="links">Register</Link>
-                    </p>
+        const alertItems = Object.entries(errors).map(([key, value]) => {
+            if(value != null){
+              return(
+                <div key={key} className="alert alert-danger" role="alert">
+                    {value}
                 </div>
-                <form noValidate onSubmit={this.onSubmit}>
-                    <div className="input-field col s12">
-                        <input
-                        onChange={this.onChange}
-                        value={this.state.email}
-                        error={errors.email}
-                        id="email"
-                        type="email"
-                        className={classnames("", {
-                            invalid: errors.email || errors.emailnotfound
-                        })}
-                        />
-                        <label htmlFor="email">Email</label>
-                        <span className="red-text">
-                            {errors.email}
-                            {errors.emailnotfound}
-                        </span>
+              )
+            }
+            return null
+        })
+        //const passwordIcon = <FontAwesomeIcon icon={faCoffee} />
+        return(
+            <div className="container-fluid">
+                <div className="loginForm">
+                    <div className="row justify-content-md-center">
+                        <div className="col-md-auto">
+                            <h4>
+                                <b>Login</b> 
+                            </h4>
+                        </div>
                     </div>
-                    <div className="input-field col s12">
-                        <input
-                        onChange={this.onChange}
-                        value={this.state.password}
-                        error={errors.password}
-                        id="password"
-                        type="password"
-                        className={classnames("", {
-                            invalid: errors.password || errors.passwordincorrect
-                        })}
-                        />
-                        <label htmlFor="password">Password</label>
-                        <span className="red-text">
-                            {errors.password}
-                            {errors.passwordincorrect}
-                        </span>
+                    <div className="row justify-content-md-center">
+                        <div className="col-md-auto">
+                            <p className="grey-text text-darken-1">
+                                Don't have an account? <Link to="/register" className="links">Register</Link>
+                            </p>
+                        </div>
                     </div>
-                    <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                        <button
-                        style={{
-                            width: "150px",
-                            borderRadius: "3px",
-                            letterSpacing: "1.5px",
-                            marginTop: "1rem"
-                        }}
-                        type="submit"
-                        className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                        >
-                        Login
-                        </button>
-                    </div>
-                </form>
-                <FontAwesomeIcon icon={faCoffee} />
+                    <form noValidate onSubmit={this.onSubmit}>
+                        <div className="form-group">
+                            {errors.email || errors.emailnotfound || errors.password || errors.passwordincorrect ? 
+                                <div>
+                                    {alertItems}
+                                </div>
+                            :
+                            ""}
+                            <div className="row">
+                                <div className="col">
+                                    <input
+                                    onChange={this.onChange}
+                                    value={this.state.email}
+                                    error={errors.email}
+                                    id="email"
+                                    type="email"
+                                    className="form-control"
+                                    />
+                                    {this.state.email === "" ? 
+                                        <div className="selectedInput">Email</div>
+                                    :
+                                        <div className="hasInput">Email</div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <div className="row">
+                                <div className="col">
+                                    <input
+                                    onChange={this.onChange}
+                                    value={this.state.password}
+                                    error={errors.password}
+                                    id="password"
+                                    type="password"
+                                    className="form-control"
+                                    />
+                                    {this.state.password === "" ? 
+                                        <div className="selectedInput">Password</div>
+                                    :
+                                        <div className="hasInput">Password</div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row justify-content-md-center">
+                            <button className="btn-block btn-primary" type="submit">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }
