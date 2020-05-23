@@ -1,7 +1,6 @@
 body {
   background-color: #282c34;
   color: white;
-  padding: 40px;
   font-family: Arial;
   text-align: center;
 }
@@ -161,5 +160,17 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+	.container-fluid { 
+    margin: 0;
+    padding: 0;
+  }
+  .formView {
+    width: 100%;
+    max-width: none;
+    
   }
 }
