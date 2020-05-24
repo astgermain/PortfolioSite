@@ -12,6 +12,7 @@ import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
 import Home from './components/Home';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/Dashboard";
 
@@ -69,6 +70,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
+            <Footer />
         </Router>
       </Provider>
       

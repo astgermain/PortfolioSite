@@ -19,30 +19,38 @@ class ContactButtons extends Component {
             <div className="contactCenter">
                 <div className="row">
                     <div className="col-6 colHoverEffectHelp">
-                        <div className="linkedInButtonPre" id="preload1">
-                            <FontAwesomeIcon icon={faLinkedin} className="linkedInIcon"/>
-                            <span className="linkedInLabel">LinkedIn</span>
-                        </div>
+                        <a href="https://www.linkedin.com/in/astger/" className="contactA">
+                            <div className="linkedInButtonPre" id="preload1">
+                                <FontAwesomeIcon icon={faLinkedin} className="linkedInIcon"/>
+                                <span className="linkedInLabel">LinkedIn</span>
+                            </div>
+                        </a>
                     </div>
                     <div className="col-6 colHoverEffectHelp">
-                        <div className="githubButtonPre" id="preload2">
-                            <FontAwesomeIcon icon={faGithubSquare} className="githubIcon"/>
-                            <span className="githubLabel">GitHub</span>
-                        </div>
+                        <a href="https://github.com/astgermain" className="contactA">
+                            <div className="githubButtonPre" id="preload2">
+                                <FontAwesomeIcon icon={faGithubSquare} className="githubIcon"/>
+                                <span className="githubLabel">GitHub</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-6 colHoverEffectHelp">
-                        <div className="emailContactButtonPre" id="preload3">
-                            <FontAwesomeIcon icon={faEnvelope} className="emailContactIcon"/>
-                            <span className="emailContactLabel">Email</span>
-                        </div>
+                        <a href="mailto:astgermain@mail.sfsu.edu" className="contactA">
+                            <div className="emailContactButtonPre" id="preload3">
+                                <FontAwesomeIcon icon={faEnvelope} className="emailContactIcon"/>
+                                <span className="emailContactLabel">Email</span>
+                            </div>
+                        </a>
                     </div>
                     <div className="col-6 colHoverEffectHelp">
-                        <div className="resumeButtonPre" id="preload4">
-                            <FontAwesomeIcon icon={faFileAlt} className="resumeIcon"/>
-                            <span className="resumeLabel">Resume</span>
-                        </div>
+                        <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_10_4.pdf" className="contactA">   
+                            <div className="resumeButtonPre" id="preload4">
+                                <FontAwesomeIcon icon={faFileAlt} className="resumeIcon"/>
+                                <span className="resumeLabel">Resume</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

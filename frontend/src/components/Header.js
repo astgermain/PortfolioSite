@@ -122,17 +122,17 @@ class Header extends Component {
                         <ul>
                             <li>
                                 <Link to="/">
-                                    <button href="/" className="btn btn-header">Home</button>
+                                    <button onClick={this.onMobileClick} className="btn btn-header">Home</button>
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/">
-                                    <button href="/" className="btn btn-header">Projects</button>
+                                    <button onClick={this.onMobileClick} className="btn btn-header">Projects</button>
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/">
-                                    <button href="/" className="btn btn-header">About</button>
+                                    <button onClick={this.onMobileClick} className="btn btn-header">About</button>
                                 </Link>
                             </li>
                             <li>
@@ -152,17 +152,17 @@ class Header extends Component {
                         <ul>
                             <li>
                                 <Link to="/">
-                                    <button href="/" className="btn btn-header">Home</button>
+                                    <button onClick={this.onMobileClick} className="btn btn-header">Home</button>
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/">
-                                    <button href="/" className="btn btn-header">Projects</button>
+                                    <button onClick={this.onMobileClick} className="btn btn-header">Projects</button>
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/">
-                                    <button href="/" className="btn btn-header">About</button>
+                                    <button onClick={this.onMobileClick} className="btn btn-header">About</button>
                                 </Link>
                             </li>
                             <li>

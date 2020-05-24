@@ -54,6 +54,15 @@ body {
   margin-left: 5px;
   margin-right: 5px;
   width: 90px;
+  background: linear-gradient(to right, transparent 50%, rgb(218, 218, 218) 50%);
+  background-size: 200% 100%;
+  background-position:left bottom;
+  transition:all .5s ease;
+}
+
+.btn-header:hover {
+  background-position:right bottom;
+  color: black;
 }
 
 .mobileHeader {
@@ -62,6 +71,78 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  height: 50px;
+}
+
+.home-content {
+  display: inline-block;
+  padding: 0px 15px 0px 15px;
+}
+
+.mainHeader {
+  margin: 25px 0px 25px 0px;
+  font-size: 6.5rem;
+  color: #fff;
+  letter-spacing: 4px;
+  font-family: Staatliches,sans-serif;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.subHeader {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: rgb(184, 184, 184);
+  letter-spacing: 4px;
+  font-family: Staatliches,sans-serif;
+  font-weight: bold;
+}
+
+.subHeader2 {
+  margin: 0;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  font-size: 1.5rem;
+  color: rgb(184, 184, 184);
+  letter-spacing: 4px;
+  font-family: Staatliches,sans-serif;
+  font-weight: bold;
+}
+
+.btn-home {
+  transition: all .15s;
+  display: inline-block;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  background-color: #22262a;
+  color: #fff;
+  font-family: Staatliches,sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 200px;
+  background: linear-gradient(to right, transparent 50%, rgb(218, 218, 218) 50%);
+  background-size: 200% 100%;
+  background-position:left bottom;
+  transition:all .5s ease;
+}
+
+.btn-home:hover {
+  background-position:right bottom;
+  color: black;
+}
+
+.status {
+  text-decoration: underline;
+  color: green;
+}
+
+.footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+  background: #23252b;
 }
 
 .contactCenter {
@@ -76,6 +157,13 @@ body {
 .colHoverEffectHelp {
   margin: 0;
   padding: 0;
+}
+
+.contactA {
+  color: white;
+}
+.contactA:hover {
+  color: white;
 }
 
 .linkedInIcon {
@@ -629,7 +717,7 @@ body {
 }
 /* main menu block */
 .mainMenu {
-  background-color: #fff;
+  background-color: #2b2b2b;
   position: absolute;
   left: 0;
   top: 0;
@@ -657,6 +745,7 @@ body {
 .mainMenu ul {
   display: table-cell;
   vertical-align: middle;
+  list-style: none;
 }
 .mainMenu li {
   padding: 8px 0;
