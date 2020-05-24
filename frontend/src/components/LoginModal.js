@@ -86,7 +86,8 @@ class LoginModal extends Component {
                                     {alertItems}
                                 </div>
                             :
-                                ""}
+                                ""
+                            }
                             <div className="row">
                                 <div className="col formField" >
                                     <input

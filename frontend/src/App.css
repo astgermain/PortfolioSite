@@ -8,6 +8,332 @@ body {
 .App {
   text-align: center;
 }
+
+.contactCenter {
+  width: 100%;
+  font-size: 32px;
+  line-height: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Staatliches', cursive;
+}
+
+.colHoverEffectHelp {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.linkedInIcon {
+  margin-top: 10px;
+  padding-left: 14px;
+  width: auto !important;
+  padding-right: 14px;
+}
+
+.emailContactIcon {
+  margin-top: 10px;
+  padding-left: 12px;
+  width: auto !important;
+  padding-right: 12px;
+}
+
+.githubIcon {
+  margin-top: 10px;
+  padding-left: 15px;
+  width: auto !important;
+}
+
+.resumeIcon {
+  margin-top: 10px;
+  padding-left: 17px;
+  width: auto !important;
+}
+
+.githubLabel, .resumeLabel {
+  padding-left: 20px;
+}
+.linkedInLabel, .emailContactLabel {
+  padding-right: 20px;
+}
+
+.linkedInButton {
+  width: 55px;
+  background-color: #0077b5;
+  float: right;
+  text-align: right;
+  margin-left: -185px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: menuloadL .5s;
+  animation: menuloadL .5s;
+  animation-fill-mode: backwards;
+  
+}
+
+.linkedInButtonPre {
+  width: 55px;
+  background-color: #0077b5;
+  float: right;
+  text-align: right;
+  margin-left: -185px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: menuloadL 0s;
+  animation: menuloadL 0s;
+  animation-fill-mode: none;
+  
+}
+
+.linkedInButton:hover {
+  
+  /*transform:  translateY(-27px);*/
+  -webkit-animation: menuhoverL 1s;
+  animation: menuhoverL 1s;
+  animation-fill-mode: forwards;
+}
+
+
+
+.githubButton {
+  width: 55px;
+  background-color: #333;
+  float: left;
+  text-align: left;
+  margin-right: -185px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: menuloadG .5s;
+  animation: menuloadG .5s;
+  animation-fill-mode: backwards;
+}
+
+
+.githubButtonPre {
+  width: 55px;
+  background-color: #333;
+  float: left;
+  text-align: left;
+  margin-right: -185px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: menuloadG 0s;
+  animation: menuloadG 0s;
+  animation-fill-mode: none;
+}
+
+.githubButton:hover {
+  -webkit-animation: menuhoverG 1s;
+  animation: menuhoverG 1s;
+  animation-fill-mode: forwards;
+}
+
+.emailContactButton {
+  width: 55px;
+  background-color: #5e5f5f;
+  float: right;
+  text-align: right;
+  margin-left: -133px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: menuloadE .5s;
+  animation: menuloadE .5s;
+  animation-fill-mode: backwards;
+}
+
+.emailContactButtonPre {
+  width: 55px;
+  background-color: #5e5f5f;
+  float: right;
+  text-align: right;
+  margin-left: -133px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: menuloadE 0s;
+  animation: menuloadE 0s;
+  animation-fill-mode: none;
+}
+
+.emailContactButton:hover {
+  -webkit-animation: menuhoverE 1s;
+  animation: menuhoverE 1s;
+  animation-fill-mode: forwards;
+}
+
+.resumeButton {
+  width: 55px;
+  background-color: #569a8c;
+  float: left;
+  text-align: left;
+  margin-right: -185px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: menuloadR .5s;
+  animation: menuloadR .5s;
+  animation-fill-mode: backwards;
+}
+
+.resumeButtonPre {
+  width: 55px;
+  background-color: #569a8c;
+  float: left;
+  text-align: left;
+  margin-right: -185px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: menuloadR 0s;
+  animation: menuloadR 0s;
+  animation-fill-mode: none;
+}
+
+.resumeButton:hover {
+  -webkit-animation: menuhoverR 1s;
+  animation: menuhoverR 1s;
+  animation-fill-mode: forwards;
+}
+
+
+
+@keyframes menuhoverL {
+  0% {
+    width: 55px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to left, #0077b5 50%, black 50%);
+  }
+  50% { 
+    width: 170px;
+      background-size: 200% 100%;
+  background-image: linear-gradient(to left, #0077b5 50%, black 50%);
+  }
+  100% {
+    width: 165px;
+      background-position: -100%;
+  }
+}
+
+@keyframes menuloadL {
+  0% {
+    width: 160px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to left, #0077b5 50%, black 50%);
+  }
+  50% { 
+    width: 50px;
+      
+      background-size: 200% 100%;
+  background-image: linear-gradient(to left, #0077b5 50%, black 50%);
+  }
+  100% {
+    width: 55px;
+      background-position: -100%;
+  }
+}
+
+@keyframes menuhoverG {
+  0% {
+    width: 55px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to left, #333 50%, black 50%);
+  }
+  50% { 
+    width: 170px;
+      background-size: 200% 100%;
+  background-image: linear-gradient(to left, #333 50%, black 50%);
+  }
+  100% {
+    width: 165px;
+      background-position: -100%;
+  }
+}
+
+@keyframes menuloadG {
+  0% {
+    width: 160px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to left, #333 50%, black 50%);
+  }
+  50% { 
+    width: 50px;
+      
+      background-size: 200% 100%;
+  background-image: linear-gradient(to left, #333 50%, black 50%);
+  }
+  100% {
+    width: 55px;
+      background-position: -100%;
+  }
+}
+
+@keyframes menuhoverE {
+  0% {
+    width: 55px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to left, #5e5f5f 50%, black 50%);
+  }
+  50% { 
+    width: 170px;
+      background-size: 200% 100%;
+  background-image: linear-gradient(to left, #5e5f5f 50%, black 50%);
+  }
+  100% {
+    width: 165px;
+      background-position: -100%;
+  }
+}
+
+@keyframes menuloadE {
+  0% {
+    width: 160px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to left, #5e5f5f 50%, black 50%);
+  }
+  50% { 
+    width: 50px;
+      
+      background-size: 200% 100%;
+  background-image: linear-gradient(to left, #5e5f5f 50%, black 50%);
+  }
+  100% {
+    width: 55px;
+      background-position: -100%;
+  }
+}
+
+@keyframes menuhoverR {
+  0% {
+    width: 55px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to left, #569a8c 50%, black 50%);
+  }
+  50% { 
+    width: 170px;
+      background-size: 200% 100%;
+  background-image: linear-gradient(to left, #569a8c 50%, black 50%);
+  }
+  100% {
+    width: 165px;
+      background-position: -100%;
+  }
+}
+
+@keyframes menuloadR {
+  0% {
+    width: 160px;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to left, #569a8c 50%, black 50%);
+  }
+  50% { 
+    width: 50px;
+      
+      background-size: 200% 100%;
+  background-image: linear-gradient(to left, #569a8c 50%, black 50%);
+  }
+  100% {
+    width: 55px;
+      background-position: -100%;
+  }
+}
+
 .links {
   font-weight: 600;
   color: #007bff;

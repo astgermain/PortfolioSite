@@ -8,7 +8,6 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import ContactButtons from './components/ContactButtons'
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
 import Home from './components/Home';
