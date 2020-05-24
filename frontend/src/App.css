@@ -120,7 +120,7 @@ body {
   font-weight: bold;
 }
 
-.btn-home {
+.btn-home, .btn-home2 {
   transition: all .15s;
   display: inline-block;
   font-size: 1rem;
@@ -135,12 +135,14 @@ body {
   background-size: 200% 100%;
   background-position:left bottom;
   transition:all .5s ease;
+  margin-bottom: 10px;
 }
 
-.btn-home:hover {
+.btn-home:hover, .btn-home2:hover {
   background-position:right bottom;
   color: black;
 }
+
 
 .status {
   text-decoration: underline;
@@ -670,6 +672,9 @@ body {
     height: 150px;
     width: 100%
   }
+  .mainHeader {
+    font-size: 3.5rem;
+  }
 }
 
 @media only screen and (max-width: 575px) {
@@ -678,6 +683,9 @@ body {
 
 @media only screen and (min-width: 768px) {
 	.mobileHeader { 
+    display: none;
+  }
+  .btn-home2 {
     display: none;
   }
 }

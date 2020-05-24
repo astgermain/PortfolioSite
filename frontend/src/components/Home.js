@@ -48,6 +48,11 @@ class Home extends Component {
                         <h2 className="subHeader2">Take a look at some of my projects</h2>
                         <button className="btn btn-home">View Projects</button>
                     </Zoom>
+                    <Zoom delay={4500}>
+                        <button className="btn btn-home2">GitHub</button>
+                        <button className="btn btn-home2">LinkedIn</button>
+                        <button className="btn btn-home2">Resume</button>
+                    </Zoom>
                 </div>
         )
     }
