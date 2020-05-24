@@ -12,7 +12,8 @@ class Header extends Component {
         this.state = {
             email: "",
             loggedIn: false,
-            errors: {}
+            errors: {},
+            mobileMenuState: ""
         };
     }
 
@@ -50,55 +51,97 @@ class Header extends Component {
         e.preventDefault();
         this.props.logoutUser();
         this.setState({loggedIn: false});
+        if(this.state.mobileMenuState === " act") return this.setState({mobileMenuState: ""})
     };
+
+    onMobileClick = () => {
+        if(this.state.mobileMenuState === " act") return this.setState({mobileMenuState: ""})
+        return this.setState({mobileMenuState: " act"})
+    };
+
+    
 
     render(){
         return(
             <div>
                 <div className="row header">
                     <div className="col-sm-4 col-md-5 headerLeft">
-                        <Link to="/">
-                            <span>Home</span>
-                        </Link>
-                        <span>Projects</span>
-                        <span>About</span>
+                        <div className="headerLeftLinks">
+                            <Link to="/">
+                                <span>Home</span>
+                            </Link>
+                            <span>Projects</span>
+                            <span>About</span>
+                        </div>
                     </div>
                     <div className="col-sm-4 col-md-2 center-align">
                         <ContactButtons />
                     </div>
                     <div className="col-sm-4 col-md-5 headerRight">
                     {this.state.loggedIn ? 
-
-                    <div>
-                        <div><b>Hi, </b> {this.checkUsersName()}</div>
-                        <button onClick={this.onLogoutClick} className="btn btn-primary">
-                            Logout
-                        </button>
-                    </div>
-                        
+                        <div className="headerRightLinks">
+                            <b>Hi, </b> {this.checkUsersName()}
+                            <button onClick={this.onLogoutClick} className="btn btn-primary">
+                                Logout
+                            </button>
+                        </div>
                     :
-                    <div className="row">
-                    <div className="col s12 center-align">
-                        <div className="col s6">
+                        <div className="headerRightLinks">
                             <Link to="/register">
-                                <button>
+                                <button className="btn btn-primary">
                                     <span>Register</span>
                                 </button>
                             </Link>
-                        </div>
-                        <div className="col s6">
                             <Link to="/login">
-                                <button>
+                                <button className="btn btn-primary">
                                     <span>Login</span>
                                 </button>
                             </Link>
                         </div>
-                    </div>
-                    </div>
                     }
                     </div>
                 </div>
-                <div className="row mobileHeader">Mobile Header Goes Here</div>
+                <div className="row mobileHeader">
+                    <button className={"menuBtn" + this.state.mobileMenuState} onClick={this.onMobileClick.bind(this)}><span className="lines"></span></button>				
+                    <nav className={"mainMenu" + this.state.mobileMenuState}>
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/">Projects</a>
+                            </li>
+                            <li>
+                                <a href="/">About</a>
+                            </li>
+                            {this.state.loggedIn ? 
+                                <li>
+                                    <button onClick={this.onLogoutClick} className="btn btn-primary">
+                                        Logout
+                                    </button>
+                                </li>
+                            :
+                            <div>
+                                <li>
+                                    <Link to="/login">
+                                        <button onClick={this.onMobileClick} className="btn btn-primary">
+                                            <span>Login</span>
+                                        </button>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/register">
+                                        <button onClick={this.onMobileClick} className="btn btn-primary">
+                                            <span>Register</span>
+                                        </button>
+                                    </Link>
+                                </li>
+                            </div>
+                                
+                            }
+                        </ul>
+                    </nav>
+                </div>
             </div>
         )
     }
