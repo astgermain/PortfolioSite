@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { logoutUser } from "../actions/authActions"; 
 import Tada from 'react-reveal/Tada';
 import Zoom from 'react-reveal/Zoom';
+import { Link } from "react-router-dom";
+
 
 
 class Home extends Component {
@@ -46,12 +48,28 @@ class Home extends Component {
                     </Zoom>
                     <Zoom delay={4500}>
                         <h2 className="subHeader2">Take a look at some of my projects</h2>
-                        <button className="btn btn-home">View Projects</button>
                     </Zoom>
                     <Zoom delay={4500}>
-                        <button className="btn btn-home2">GitHub</button>
-                        <button className="btn btn-home2">LinkedIn</button>
-                        <button className="btn btn-home2">Resume</button>
+                        <Link to="/">
+                            <button className="btn btn-home">
+                                View Projects
+                            </button>
+                        </Link>
+                        <div>
+                        <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_10_4.pdf">
+                            <button className="btn btn-home2">Resume</button>
+                        </a>
+                        </div>
+                        <div>
+                        <a href="https://github.com/astgermain">
+                            <button className="btn btn-home2">GitHub</button>
+                        </a>
+                        </div>
+                        <div>
+                        <a href="https://www.linkedin.com/in/astger/">
+                            <button className="btn btn-home2">LinkedIn</button>
+                        </a>
+                        </div>
                     </Zoom>
                 </div>
         )
