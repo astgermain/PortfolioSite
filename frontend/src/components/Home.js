@@ -50,7 +50,7 @@ class Home extends Component {
                         <h2 className="subHeader2">Take a look at some of my projects</h2>
                     </Zoom>
                     <Zoom delay={4500}>
-                        <Link to="/">
+                        <Link to="/projects">
                             <button className="btn btn-home">
                                 View Projects
                             </button>

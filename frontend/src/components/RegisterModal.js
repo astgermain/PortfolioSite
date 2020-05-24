@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 import { registerUser } from "../actions/authActions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLock, faUser, faClipboardCheck } from '@fortawesome/free-solid-svg-icons'
-import Roll from 'react-reveal/Roll';
+import Pulse from 'react-reveal/Pulse';
+
 
 class RegisterModal extends Component {
 
@@ -67,7 +68,7 @@ class RegisterModal extends Component {
         const passwordIcon = <FontAwesomeIcon icon={faLock} color="#bfbfbf" />
         const password2Icon = <FontAwesomeIcon icon={faClipboardCheck} color="#bfbfbf" />
         return(
-            <Roll left>
+            <Pulse>
                 <div className="container-fluid">
                     <div className="formView">
                         <div className="row justify-content-md-center">
@@ -184,7 +185,7 @@ class RegisterModal extends Component {
                         </form>
                     </div>
                 </div>
-            </Roll>
+            </Pulse>
 
             
         )

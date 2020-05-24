@@ -11,6 +11,8 @@ import store from "./store";
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
 import Home from './components/Home';
+import About from './components/About';
+import Projects from './components/Projects';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -67,6 +69,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={RegisterModal} />
             <Route exact path="/login" component={LoginModal} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/projects" component={Projects} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

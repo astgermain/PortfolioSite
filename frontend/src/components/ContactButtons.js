@@ -19,7 +19,7 @@ class ContactButtons extends Component {
             <div className="contactCenter">
                 <div className="row">
                     <div className="col-6 colHoverEffectHelp">
-                        <a href="https://www.linkedin.com/in/astger/" target="_blank" className="contactA">
+                        <a href="https://www.linkedin.com/in/astger/" target="_blank" rel="noopener noreferrer" className="contactA">
                             <div className="linkedInButtonPre" id="preload1">
                                 <FontAwesomeIcon icon={faLinkedin} className="linkedInIcon"/>
                                 <span className="linkedInLabel">LinkedIn</span>
@@ -27,7 +27,7 @@ class ContactButtons extends Component {
                         </a>
                     </div>
                     <div className="col-6 colHoverEffectHelp">
-                        <a href="https://github.com/astgermain" target="_blank" className="contactA">
+                        <a href="https://github.com/astgermain" target="_blank" rel="noopener noreferrer" className="contactA">
                             <div className="githubButtonPre" id="preload2">
                                 <FontAwesomeIcon icon={faGithubSquare} className="githubIcon"/>
                                 <span className="githubLabel">GitHub</span>
@@ -37,7 +37,7 @@ class ContactButtons extends Component {
                 </div>
                 <div className="row">
                     <div className="col-6 colHoverEffectHelp">
-                        <a href="mailto:astgermain@mail.sfsu.edu" target="_blank" className="contactA">
+                        <a href="mailto:astgermain@mail.sfsu.edu" className="contactA">
                             <div className="emailContactButtonPre" id="preload3">
                                 <FontAwesomeIcon icon={faEnvelope} className="emailContactIcon"/>
                                 <span className="emailContactLabel">Email</span>
@@ -45,7 +45,7 @@ class ContactButtons extends Component {
                         </a>
                     </div>
                     <div className="col-6 colHoverEffectHelp">
-                        <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_10_4.pdf" target="_blank" className="contactA">   
+                        <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_10_4.pdf" target="_blank" rel="noopener noreferrer" className="contactA">   
                             <div className="resumeButtonPre" id="preload4">
                                 <FontAwesomeIcon icon={faFileAlt} className="resumeIcon"/>
                                 <span className="resumeLabel">Resume</span>
