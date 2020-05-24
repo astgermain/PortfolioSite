@@ -69,7 +69,13 @@ class RegisterModal extends Component {
         const password2Icon = <FontAwesomeIcon icon={faClipboardCheck} color="#bfbfbf" />
         return(
             <Pulse>
-                <div className="container-fluid">
+                <div className="container-fluid register">
+                    <h2 className="subHeader">
+                        Account usage is mainly for admin updates, however feel free to register an account to check it out!
+                    </h2>
+                    <h2 className="subHeader">
+                        You wont be able to see much though...
+                    </h2>
                     <div className="formView">
                         <div className="row justify-content-md-center">
                             <div className="col-md-auto">

@@ -64,7 +64,13 @@ class LoginModal extends Component {
         const passwordIcon = <FontAwesomeIcon icon={faLock} color="#bfbfbf" />
         return(
             <Zoom>
-                <div className="container-fluid">
+                <div className="container-fluid login">
+                    <h2 className="subHeader">
+                        Account usage is mainly for admin updates, however feel free to register an account to check it out!
+                    </h2>
+                    <h2 className="subHeader">
+                        You wont be able to see much though...
+                    </h2>
                     <div className="formView">
                         <div className="row justify-content-md-center">
                             <div className="col-md-auto">

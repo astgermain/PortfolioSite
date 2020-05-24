@@ -25,7 +25,7 @@ class Dashboard extends Component {
         const dbAdminButton = this.state.opened ? 'Close DB Admin' : 'Open DB Admin'
         return (
             <Slide left>
-                <div style={{ height: "75vh" }} className="container valign-wrapper">
+                <div className="container dashboard">
                     <div className="row">
                         <div className="col s12 center-align">
                             <h4>
