@@ -363,12 +363,10 @@ body {
 @keyframes menuhoverL {
   0% {
     width: 55px;
-    background-size: 200% 100%;
     background-image: linear-gradient(to left, #0077b5 100%, black 0%);
   }
   50% { 
-    width: 170px;
-      background-size: 200% 100%;
+    width: 175px;
   background-image: linear-gradient(to left, #0077b5 100%, black 0%);
   }
   100% {
@@ -380,123 +378,105 @@ body {
 @keyframes menuloadL {
   0% {
     width: 160px;
-    background-size: 200% 100%;
     background-image: linear-gradient(to left, #0077b5 100%, black 0%);
   }
   50% { 
-    width: 45px;
-      
-      background-size: 200% 100%;
-  background-image: linear-gradient(to left, #0077b5 100%, black 0%);
+    width: 45px;  
+    background-image: linear-gradient(to left, #0077b5 100%, black 0%);
   }
   100% {
     width: 55px;
-      background-position: -100%;
+    background-position: -100%;
   }
 }
 
 @keyframes menuhoverG {
   0% {
     width: 55px;
-    background-size: 200% 100%;
     background-image: linear-gradient(to left, #333 100%, black 0%);
   }
   50% { 
-    width: 170px;
-      background-size: 200% 100%;
-  background-image: linear-gradient(to left, #333 100%, black 0%);
+    width: 175px;
+    background-image: linear-gradient(to left, #333 100%, black 0%);
   }
   100% {
     width: 165px;
-      background-position: -100%;
+    background-position: -100%;
   }
 }
 
 @keyframes menuloadG {
   0% {
     width: 160px;
-    background-size: 200% 100%;
     background-image: linear-gradient(to left, #333 100%, black 0%);
   }
   50% { 
     width: 45px;
-      
-      background-size: 200% 100%;
-  background-image: linear-gradient(to left, #333 100%, black 0%);
+    background-image: linear-gradient(to left, #333 100%, black 0%);
   }
   100% {
     width: 55px;
-      background-position: -100%;
+    background-position: -100%;
   }
 }
 
 @keyframes menuhoverE {
   0% {
     width: 55px;
-    background-size: 200% 100%;
     background-image: linear-gradient(to left, #5e5f5f 100%, black 0%);
   }
   50% { 
-    width: 170px;
-      background-size: 200% 100%;
-  background-image: linear-gradient(to left, #5e5f5f 100%, black 0%);
+    width: 175px;
+    background-image: linear-gradient(to left, #5e5f5f 100%, black 0%);
   }
   100% {
     width: 165px;
-      background-position: -100%;
+    background-position: -100%;
   }
 }
 
 @keyframes menuloadE {
   0% {
     width: 160px;
-    background-size: 200% 100%;
     background-image: linear-gradient(to left, #5e5f5f 100%, black 0%);
   }
   50% { 
-    width: 45px;
-      
-      background-size: 200% 100%;
-  background-image: linear-gradient(to left, #5e5f5f 100%, black 0%);
+    width: 45px;   
+    background-image: linear-gradient(to left, #5e5f5f 100%, black 0%);
   }
   100% {
     width: 55px;
-      background-position: -100%;
+    background-position: -100%;
   }
 }
 
 @keyframes menuhoverR {
   0% {
     width: 55px;
-    background-size: 200% 100%;
     background-image: linear-gradient(to left, #569a8c 100%, black 0%);
   }
   50% { 
-    width: 170px;
-      background-size: 200% 100%;
-  background-image: linear-gradient(to left, #569a8c 100%, black 0%);
+    width: 175px;
+    background-image: linear-gradient(to left, #569a8c 100%, black 0%);
   }
   100% {
     width: 165px;
-      background-position: -100%;
+    background-position: -100%;
   }
 }
 
 @keyframes menuloadR {
   0% {
     width: 160px;
-    background-size: 200% 100%;
     background-image: linear-gradient(to left, #569a8c 100%, black 0%);
   }
   50% { 
     width: 45px;
-      
-      background-size: 200% 100%;
-  background-image: linear-gradient(to left, #569a8c 100%, black 0%);
+    background-image: linear-gradient(to left, #569a8c 100%, black 0%);
   }
   100% {
     width: 55px;
-      background-position: -100%;
+    background-position: -100%;
   }
 }
 
