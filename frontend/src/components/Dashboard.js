@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions";
 import DBAdmin from './DBAdmin';
+import Slide from 'react-reveal/Slide';
+
 
 class Dashboard extends Component {
     state = {
@@ -22,35 +24,25 @@ class Dashboard extends Component {
         const dbAdmin = this.state.opened ? <DBAdmin/> : ''
         const dbAdminButton = this.state.opened ? 'Close DB Admin' : 'Open DB Admin'
         return (
-            <div style={{ height: "75vh" }} className="container valign-wrapper">
-                <div className="row">
-                    <div className="col s12 center-align">
-                        <h4>
-                            <b>Hey there,</b> {user.name.split(" ")[0]} 👏
-                                {user.admin === true ? 
-                                <div>
-                                    <button className="btn btn-primary" onClick={() => this.handleClick()}>{dbAdminButton}</button>
-                                    {dbAdmin}
-                                </div>
-                                 : 'You are not an admin for this site. Please request access if you need it. User features coming soon.'
-                                }
-                                
-                        </h4>
-                        <button
-                        style={{
-                            width: "150px",
-                            borderRadius: "3px",
-                            letterSpacing: "1.5px",
-                            marginTop: "1rem"
-                        }}
-                        onClick={this.onLogoutClick}
-                        className="btn btn-primary"
-                        >
-                        Logout
-                        </button>
+            <Slide left>
+                <div style={{ height: "75vh" }} className="container valign-wrapper">
+                    <div className="row">
+                        <div className="col s12 center-align">
+                            <h4>
+                                <b>Hey there,</b> {user.name.split(" ")[0]} 👏
+                                    {user.admin === true ? 
+                                    <div>
+                                        <button className="btn btn-primary" onClick={() => this.handleClick()}>{dbAdminButton}</button>
+                                        {dbAdmin}
+                                    </div>
+                                    : 'You are not an admin for this site. Please request access if you need it. User features coming soon.'
+                                    }
+                                    
+                            </h4>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Slide>
     );
   }
 }

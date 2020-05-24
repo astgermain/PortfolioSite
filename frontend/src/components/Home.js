@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { logoutUser } from "../actions/authActions";
-
+import { logoutUser } from "../actions/authActions"; 
+import Tada from 'react-reveal/Tada';
 
 
 class Home extends Component {
@@ -29,9 +29,11 @@ class Home extends Component {
         
         
         return(
+            <Tada>
             <div>
-                
+                asdfa
             </div>
+            </Tada>
         )
     }
 }

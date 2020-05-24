@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { registerUser } from "../actions/authActions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLock, faUser, faClipboardCheck } from '@fortawesome/free-solid-svg-icons'
+import Roll from 'react-reveal/Roll';
 
 class RegisterModal extends Component {
 
@@ -66,123 +67,124 @@ class RegisterModal extends Component {
         const passwordIcon = <FontAwesomeIcon icon={faLock} color="#bfbfbf" />
         const password2Icon = <FontAwesomeIcon icon={faClipboardCheck} color="#bfbfbf" />
         return(
-            <div className="container-fluid">
-                <div className="formView">
-                    <div className="row justify-content-md-center">
-                        <div className="col-md-auto">
-                            <h4>
-                                <b>Register</b> 
-                            </h4>
-                        </div>
-                    </div>
-                    <div className="row justify-content-md-center">
-                        <div className="col-md-auto">
-                            <p className="grey-text text-darken-1">
-                                Already have an account? <Link to="/login" className="links">Log in</Link>
-                            </p>
-                        </div>
-                    </div>
-                <form noValidate onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        {errors.name || errors.email || errors.password || errors.password2 ? 
-                            <div>
-                                {alertItems}
+            <Roll left>
+                <div className="container-fluid">
+                    <div className="formView">
+                        <div className="row justify-content-md-center">
+                            <div className="col-md-auto">
+                                <h4>
+                                    <b>Register</b> 
+                                </h4>
                             </div>
-                        :
-                            ""
-                        }
-                        <div className="row">
-                            <div className="col formField" >
+                        </div>
+                        <div className="row justify-content-md-center">
+                            <div className="col-md-auto">
+                                <p className="grey-text text-darken-1">
+                                    Already have an account? <Link to="/login" className="links">Log in</Link>
+                                </p>
+                            </div>
+                        </div>
+                        <form noValidate onSubmit={this.onSubmit}>
+                            <div className="form-group">
+                                {errors.name || errors.email || errors.password || errors.password2 ? 
+                                    <div>
+                                        {alertItems}
+                                    </div>
+                                :
+                                    ""
+                                }
+                                <div className="row">
+                                    <div className="col formField" >
+                                
+                                        <input
+                                        onChange={this.onChange}
+                                        value={this.state.name}
+                                        error={errors.name}
+                                        id="name"
+                                        type="text"
+                                        className="form-control"
+                                        />
+                                        <label htmlFor="name" className="labelIcon">{nameIcon}</label>
+                                        {this.state.name === "" ? 
+                                            <div className="selectedInput">Name</div>
+                                        :
+                                            <div className="hasInput">Name</div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
                         
-                                <input
-                                onChange={this.onChange}
-                                value={this.state.name}
-                                error={errors.name}
-                                id="name"
-                                type="text"
-                                className="form-control"
-                                />
-                                <label htmlFor="name" className="labelIcon">{nameIcon}</label>
-                                {this.state.name === "" ? 
-                                    <div className="selectedInput">Name</div>
-                                :
-                                    <div className="hasInput">Name</div>
-                                }
+                            <div className="form-group">
+                                <div className="row">
+                                    <div className="col formField">
+                                        <input
+                                        onChange={this.onChange}
+                                        value={this.state.email}
+                                        error={errors.email}
+                                        id="email"
+                                        type="text"
+                                        className="form-control"
+                                        />
+                                        <label htmlFor="email" className="labelIcon">{emailIcon}</label>
+                                        {this.state.email === "" ? 
+                                            <div className="selectedInput">Email</div>
+                                        :
+                                            <div className="hasInput">Email</div>
+                                        }
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                
-                    <div className="form-group">
-                        <div className="row">
-                            <div className="col formField">
-                                <input
-                                onChange={this.onChange}
-                                value={this.state.email}
-                                error={errors.email}
-                                id="email"
-                                type="text"
-                                className="form-control"
-                                />
-                                <label htmlFor="email" className="labelIcon">{emailIcon}</label>
-                                {this.state.email === "" ? 
-                                    <div className="selectedInput">Email</div>
-                                :
-                                    <div className="hasInput">Email</div>
-                                }
+                            <div className="form-group">
+                                <div className="row">
+                                    <div className="col formField">
+                                        <input
+                                        onChange={this.onChange}
+                                        value={this.state.password}
+                                        error={errors.password}
+                                        id="password"
+                                        type="text"
+                                        className="form-control"
+                                        />
+                                        <label htmlFor="password" className="labelIcon">{passwordIcon}</label>
+                                        {this.state.password === "" ? 
+                                            <div className="selectedInput">Password</div>
+                                        :
+                                            <div className="hasInput">Password</div>
+                                        }
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="row">
-                            <div className="col formField">
-                                <input
-                                onChange={this.onChange}
-                                value={this.state.password}
-                                error={errors.password}
-                                id="password"
-                                type="text"
-                                className="form-control"
-                                />
-                                <label htmlFor="password" className="labelIcon">{passwordIcon}</label>
-                                {this.state.password === "" ? 
-                                    <div className="selectedInput">Password</div>
-                                :
-                                    <div className="hasInput">Password</div>
-                                }
+                            <div className="form-group">
+                                <div className="row">
+                                    <div className="col formField">
+                                        <input
+                                        onChange={this.onChange}
+                                        value={this.state.password2}
+                                        error={errors.password2}
+                                        id="password2"
+                                        type="password2"
+                                        className="form-control"
+                                        />
+                                        <label htmlFor="password2" className="labelIcon">{password2Icon}</label>
+                                        {this.state.password2 === "" ? 
+                                            <div className="selectedInput">Confirm Password</div>
+                                        :
+                                            <div className="hasInput">Confirm Password</div>
+                                        }
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="row">
-                            <div className="col formField">
-                                <input
-                                onChange={this.onChange}
-                                value={this.state.password2}
-                                error={errors.password2}
-                                id="password2"
-                                type="password2"
-                                className="form-control"
-                                />
-                                <label htmlFor="password2" className="labelIcon">{password2Icon}</label>
-                                {this.state.password2 === "" ? 
-                                    <div className="selectedInput">Confirm Password</div>
-                                :
-                                    <div className="hasInput">Confirm Password</div>
-                                }
+                            <div className="row justify-content-md-center">
+                                <div className="col">
+                                    <button className="btn-block btn-primary" type="submit">
+                                        Register
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                    <div className="row justify-content-md-center">
-                        <div className="col">
-                            <button className="btn-block btn-primary" type="submit">
-                                Register
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            </div>
-
+                </div>
+            </Roll>
 
             
         )

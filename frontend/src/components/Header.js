@@ -63,15 +63,25 @@ class Header extends Component {
 
     render(){
         return(
-            <div>
+            <div className="container-fluid">
                 <div className="row header">
                     <div className="col-sm-4 col-md-5 headerLeft">
                         <div className="headerLeftLinks">
                             <Link to="/">
-                                <span>Home</span>
+                                <button className="btn btn-header">
+                                    Home
+                                </button>
                             </Link>
-                            <span>Projects</span>
-                            <span>About</span>
+                            <Link to="/">
+                                <button className="btn btn-header">
+                                    Projects
+                                </button>
+                            </Link>
+                            <Link to="/">
+                                <button className="btn btn-header">
+                                    About
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     <div className="col-sm-4 col-md-2 center-align">
@@ -80,20 +90,24 @@ class Header extends Component {
                     <div className="col-sm-4 col-md-5 headerRight">
                     {this.state.loggedIn ? 
                         <div className="headerRightLinks">
-                            <b>Hi, </b> {this.checkUsersName()}
-                            <button onClick={this.onLogoutClick} className="btn btn-primary">
+                            <Link to="/dashboard">
+                                <button className="btn btn-header">
+                                    <span>Dashboard</span>
+                                </button>
+                            </Link>
+                            <button onClick={this.onLogoutClick} className="btn btn-header">
                                 Logout
                             </button>
                         </div>
                     :
                         <div className="headerRightLinks">
                             <Link to="/register">
-                                <button className="btn btn-primary">
+                                <button className="btn btn-header">
                                     <span>Register</span>
                                 </button>
                             </Link>
                             <Link to="/login">
-                                <button className="btn btn-primary">
+                                <button className="btn btn-header">
                                     <span>Login</span>
                                 </button>
                             </Link>
@@ -104,42 +118,71 @@ class Header extends Component {
                 <div className="row mobileHeader">
                     <button className={"menuBtn" + this.state.mobileMenuState} onClick={this.onMobileClick.bind(this)}><span className="lines"></span></button>				
                     <nav className={"mainMenu" + this.state.mobileMenuState}>
+                        {this.state.loggedIn ? 
                         <ul>
                             <li>
-                                <a href="/">Home</a>
+                                <Link to="/">
+                                    <button href="/" className="btn btn-header">Home</button>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/">Projects</a>
+                                <Link to="/">
+                                    <button href="/" className="btn btn-header">Projects</button>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/">About</a>
+                                <Link to="/">
+                                    <button href="/" className="btn btn-header">About</button>
+                                </Link>
                             </li>
-                            {this.state.loggedIn ? 
-                                <li>
-                                    <button onClick={this.onLogoutClick} className="btn btn-primary">
-                                        Logout
+                            <li>
+                                <Link to="/dashboard">
+                                    <button onClick={this.onMobileClick} className="btn btn-header">
+                                        Dashboard
                                     </button>
-                                </li>
-                            :
-                            <div>
-                                <li>
-                                    <Link to="/login">
-                                        <button onClick={this.onMobileClick} className="btn btn-primary">
-                                            <span>Login</span>
-                                        </button>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/register">
-                                        <button onClick={this.onMobileClick} className="btn btn-primary">
-                                            <span>Register</span>
-                                        </button>
-                                    </Link>
-                                </li>
-                            </div>
-                                
-                            }
+                                </Link>
+                            </li>
+                            <li>
+                                <button onClick={this.onLogoutClick} className="btn btn-header">
+                                    Logout
+                                </button>
+                            </li>
                         </ul>
+                        :
+                        <ul>
+                            <li>
+                                <Link to="/">
+                                    <button href="/" className="btn btn-header">Home</button>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/">
+                                    <button href="/" className="btn btn-header">Projects</button>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/">
+                                    <button href="/" className="btn btn-header">About</button>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/login">
+                                    <button onClick={this.onMobileClick} className="btn btn-header">
+                                        <span>Login</span>
+                                    </button>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/register">
+                                    <button onClick={this.onMobileClick} className="btn btn-header">
+                                        <span>Register</span>
+                                    </button>
+                                </Link>
+                            </li>
+                        </ul>
+                                
+                        }
+                        
                     </nav>
                 </div>
             </div>

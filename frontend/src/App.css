@@ -9,22 +9,26 @@ body {
   text-align: center;
 }
 
+.container-fluid {
+  padding: 0;
+}
+
 .row {
   margin: 0;
 }
 
 .header {
-  background: #00013140;
+  background: #00000030;
   margin-bottom: 25px;
+  display: flex;
 }
-
-
 
 .headerRight {
   float: right;
   background: url(./assets/header-right.png) left top no-repeat;
   background-size: cover;
   display: block;
+  padding: 0;
 }
 
 .headerLeft {
@@ -32,10 +36,24 @@ body {
   background: url(./assets/header-left.png) right top no-repeat;
   background-size: cover;
   display: block;
+  padding: 0;
 }
 
 .headerLeftLinks, .headerRightLinks {
   padding-top: 45px;
+}
+
+.btn-header {
+  transition: all .15s;
+  display: inline-block;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  background-color: #22262a;
+  color: #fff;
+  font-family: Staatliches,sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 90px;
 }
 
 .mobileHeader {
@@ -129,8 +147,6 @@ body {
   animation-fill-mode: forwards;
 }
 
-
-
 .githubButton {
   width: 55px;
   background-color: #333;
@@ -145,7 +161,6 @@ body {
   position: absolute;
   z-index: 40;
 }
-
 
 .githubButtonPre {
   width: 55px;
@@ -231,8 +246,6 @@ body {
   animation: menuhoverR 1s;
   animation-fill-mode: forwards;
 }
-
-
 
 @keyframes menuhoverL {
   0% {
@@ -538,25 +551,23 @@ body {
     width: 100%;
     max-width: none;
   }
+}
+@media only screen and (max-width: 767px) {
   .header {
     background: #1e2026;
+    display: none;
   }
 }
 
 @media only screen and (max-width: 575px) {
-	.header { 
-    display: none;
-  }
+	
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 768px) {
 	.mobileHeader { 
     display: none;
   }
 }
-
-
-
 
 .menuBtn {
   height: 30px;

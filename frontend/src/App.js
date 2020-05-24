@@ -62,7 +62,6 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div>  
             <Header />
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={RegisterModal} />
@@ -70,7 +69,6 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
-          </div>
         </Router>
       </Provider>
       
