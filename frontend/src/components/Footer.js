@@ -24,7 +24,7 @@ class Footer extends Component {
                 &copy; 2020 Andrew St Germain. All Rights Reserved.   
                 </div>
                 <div className="col-md-4 col-12">
-                E-Mail: <a href="mailto:astgermain@mail.sfsu.edu">astgermain@mail.sfsu.edu</a>
+                E-Mail: <a href="mailto:astgermain@mail.sfsu.edu" target="_blank">astgermain@mail.sfsu.edu</a>
                 </div>
                 <div className="col-md-4 col-12">
                 Phone: +1-310-696-9341  

@@ -56,17 +56,17 @@ class Home extends Component {
                             </button>
                         </Link>
                         <div>
-                        <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_10_4.pdf">
+                        <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_10_4.pdf" target="_blank" rel="noopener noreferrer">
                             <button className="btn btn-home2">Resume</button>
                         </a>
                         </div>
                         <div>
-                        <a href="https://github.com/astgermain">
+                        <a href="https://github.com/astgermain" target="_blank" rel="noopener noreferrer">
                             <button className="btn btn-home2">GitHub</button>
                         </a>
                         </div>
                         <div>
-                        <a href="https://www.linkedin.com/in/astger/">
+                        <a href="https://www.linkedin.com/in/astger/" target="_blank" rel="noopener noreferrer">
                             <button className="btn btn-home2">LinkedIn</button>
                         </a>
                         </div>
