@@ -32,8 +32,8 @@ class Home extends Component {
         return(
                 <div className="home-content">
                     <Zoom delay={7000}>
-                    <h2 className="subHeader">^</h2>
-                        <h2 className="subHeader">You can find my Github, LinkedIn, Resume, and Email above</h2>
+                    <h2 className="subHeader3">^</h2>
+                        <h2 className="subHeader3">You can find my Github, LinkedIn, Resume, and Email above</h2>
                     </Zoom>
                     <Tada>
                         <h1 className="mainHeader">Hi, I'm Andrew</h1>
