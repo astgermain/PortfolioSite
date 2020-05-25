@@ -10,7 +10,7 @@ import {
 export const registerUser = (userData, history) => dispatch => {
     let url = window.location.hostname        
     axios
-        .post('https://' + url + ':4000/api/users/register', userData)
+        .post('/api/users/register', userData)
         .then(res => history.push("/login")) // re-direct to login on successful register
         .catch(err =>
             dispatch({
