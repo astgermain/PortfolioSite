@@ -77,7 +77,6 @@ body {
 .home-content {
   display: inline-block;
   padding: 0px 15px 0px 15px;
-  overflow-y: scroll;
 }
 
 .mainHeader {
