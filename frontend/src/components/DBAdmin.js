@@ -13,7 +13,8 @@ class DBAdmin extends Component {
       objectToUpdate: null,
       name: null,
       link: null,
-      image: null
+      image: null,
+      
     };
   
     // when component mounts, first thing it does is fetch all existing data in our db
@@ -52,21 +53,6 @@ class DBAdmin extends Component {
         name: this.state.name,
         link: this.state.link,
         image: this.state.image,
-      });
-    };
-  
-    // our put method that uses our backend api
-    // to create new query into our data base
-    putDataToDB = (message) => {
-      let currentIds = this.state.data.map((data) => data.id);
-      let idToBeAdded = 0;
-      while (currentIds.includes(idToBeAdded)) {
-        ++idToBeAdded;
-      }
-      let url = window.location.hostname
-      axios.post('http://' + url + ':4000/api/putData', {
-        id: idToBeAdded,
-        message: message,
       });
     };
   

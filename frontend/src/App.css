@@ -233,8 +233,7 @@ body {
   overflow: hidden;
   -webkit-animation: menuloadL .5s;
   animation: menuloadL .5s;
-  animation-fill-mode: backwards;
-  
+  animation-fill-mode: backwards; 
 }
 
 .linkedInButtonPre {
@@ -247,13 +246,10 @@ body {
   overflow: hidden;
   -webkit-animation: menuloadL 0s;
   animation: menuloadL 0s;
-  animation-fill-mode: none;
-  
+  animation-fill-mode: none;  
 }
 
 .linkedInButton:hover {
-  
-  /*transform:  translateY(-27px);*/
   -webkit-animation: menuhoverL 1s;
   animation: menuhoverL 1s;
   animation-fill-mode: forwards;

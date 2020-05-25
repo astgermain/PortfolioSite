@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../actions/authActions";
 import Jump from 'react-reveal/Jump';
 
 
@@ -19,7 +18,6 @@ class Projects extends Component {
         this.setState({ opened: !this.state.opened});
     }
     render() {
-        const { user } = this.props.auth;
         return (
             <Jump>
                 <div className="project">
@@ -38,7 +36,6 @@ class Projects extends Component {
   }
 }
 Projects.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
