@@ -40,16 +40,14 @@ class DBAdmin extends Component {
     // fetch data from our data base
     
     getDataFromDb = () => {
-      let url = window.location.hostname
-      fetch('http://' + url + ':4000/api/project')
+      fetch('/api/project')
         .then((data) => data.json())
         .then((res) => this.setState({ data: res.data }))
         .catch(err => this.setState({ data: [] }))
     };
 
     createProject = () => {
-      let url = window.location.hostname
-      axios.post('http://' + url + ':4000/api/project', {
+      axios.post('/api/project', {
         name: this.state.name,
         link: this.state.link,
         image: this.state.image,
@@ -59,8 +57,7 @@ class DBAdmin extends Component {
     // our delete method that uses our backend api
     // to remove existing database information
     deleteFromDB = (idTodelete) => {
-      let url = window.location.hostname
-      axios.delete('http://' + url + ':4000/api/project/' + idTodelete, {
+      axios.delete('/api/project/' + idTodelete, {
         data: {
           _id: idTodelete,
         },
@@ -82,7 +79,7 @@ class DBAdmin extends Component {
         }
       });
       let url = window.location.hostname
-      axios.post('http://' + url + ':4000/api/updateData', {
+      axios.post('/api/updateData', {
         id: objIdToUpdate,
         update: { message: updateToApply },
       });

@@ -27,6 +27,7 @@ app.use(session({
 app.use(passport.initialize())
 require('./config/passport')(passport)
 app.use('/api/users', validationRouter)
+app.use('/api', projectRouter)
 app.use(passport.session())
 
 app.use((req, res, next) => {
@@ -40,7 +41,5 @@ app.use((req, res, next) => {
 app.get("/", function(req, res) {
   res.send("Backend API Main Page");
 });
-
-app.use('/api', projectRouter)
 
 app.listen(apiPort, () => console.log('Express app start on port ' + apiPort))
