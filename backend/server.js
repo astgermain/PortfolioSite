@@ -30,7 +30,7 @@ app.use('/api/users', validationRouter)
 app.use(passport.session())
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4000');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -41,7 +41,7 @@ app.use((req, res, next) => {
   // Set to true if you need the website to include cookies in the requests sent
   // to the API (e.g. in case you use sessions)
   res.setHeader('Access-Control-Allow-Credentials', true);
-  
+
   res.locals.loggedIn = req.isAuthenticated()
   next()
 })
