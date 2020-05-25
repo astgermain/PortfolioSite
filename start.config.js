@@ -12,7 +12,7 @@ module.exports = {
   },
   {
     name       : "frontend",
-    script     : "node_modules/react-scripts/scripts/start.js --name \"frontend\"",
+    script     : "node_modules/react-scripts/scripts/build.js --name \"frontend\"",
     watch       : true,
     env: {
       "NODE_ENV": "development",
