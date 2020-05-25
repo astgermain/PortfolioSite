@@ -78,7 +78,6 @@ class DBAdmin extends Component {
           objIdToUpdate = dat._id;
         }
       });
-      let url = window.location.hostname
       axios.post('/api/updateData', {
         id: objIdToUpdate,
         update: { message: updateToApply },
