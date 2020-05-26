@@ -38,7 +38,7 @@ app.use((req, res, next) => {
   next()
 })
 
-if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === 'development'){
   //Set static folder
   app.use(express.static('frontend/build'))
   app.get('*', (req, res) => {
@@ -47,8 +47,6 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 
-app.get("/", function(req, res) {
-  res.send("Backend API Main Page");
-});
+
 
 app.listen(apiPort, () => console.log('Express app start on port ' + apiPort))
