@@ -44,7 +44,7 @@ class Home extends Component {
                         <h2 className="subHeader">I'm a professional software developer based out of the SF Bay Area</h2>
                     </Zoom>
                     <Zoom delay={3000}>
-                        <h2 className="subHeader">I am <span className="status">currently</span> looking for new opportuinites!</h2>
+                        <h2 className="subHeader">I am <span className="status">currently</span> looking for new opportunities!</h2>
                     </Zoom>
                     <Zoom delay={4500}>
                         <h2 className="subHeader2">Take a look at some of my projects</h2>
