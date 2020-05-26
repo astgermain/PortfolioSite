@@ -3,6 +3,7 @@ const app = express()
 const apiPort = 4000
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const path = require('path')
 
 const db = require('./db')
 
@@ -36,6 +37,14 @@ app.use((req, res, next) => {
   res.locals.loggedIn = req.isAuthenticated()
   next()
 })
+
+if(process.env.NODE_ENV === 'production'){
+  //Set static folder
+  app.use(express.static('frontend/build'))
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+  })
+}
 
 
 app.get("/", function(req, res) {
