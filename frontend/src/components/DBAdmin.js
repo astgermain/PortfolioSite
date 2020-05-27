@@ -51,6 +51,7 @@ class DBAdmin extends Component {
         name: this.state.name,
         link: this.state.link,
         image: this.state.image,
+        about: this.state.image,
       });
     };
   
@@ -110,7 +111,8 @@ class DBAdmin extends Component {
                   <span style={{ color: 'gray' }}> id: </span> {dat._id} <br />
                   <span style={{ color: 'gray' }}> name: </span> {dat.name} <br />
                   <span style={{ color: 'gray' }}> link: </span> {dat.link} <br />
-                  <span style={{ color: 'gray' }}> image: </span> {dat.image} 
+                  <span style={{ color: 'gray' }}> image: </span> {dat.image} <br />
+                  <span style={{ color: 'gray' }}> about: </span> {dat.about} 
                   <button onClick={() => this.deleteFromDB(dat._id)}>
                     DELETE
                   </button>
@@ -134,6 +136,12 @@ class DBAdmin extends Component {
               type="text"
               onChange={(e) => this.setState({ image: e.target.value })}
               placeholder="Project Image"
+              style={{ width: '200px' }}
+            />
+            <input
+              type="text"
+              onChange={(e) => this.setState({ about: e.target.value })}
+              placeholder="Project About"
               style={{ width: '200px' }}
             />
             <button onClick={() => this.createProject(this.state.message)}>

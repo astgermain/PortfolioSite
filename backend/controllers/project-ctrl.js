@@ -53,6 +53,7 @@ updateProject = async (req, res) => {
         project.name = project.name
         project.link = project.link
         project.image = project.image
+        project.about = project.about
         project
             .save()
             .then(() => {
