@@ -14,6 +14,7 @@ class DBAdmin extends Component {
       name: null,
       link: null,
       image: null,
+      about: null,
       
     };
   
@@ -146,17 +147,6 @@ class DBAdmin extends Component {
             />
             <button onClick={() => this.createProject(this.state.message)}>
               CREATE
-            </button>
-          </div>
-          <div style={{ padding: '10px' }}>
-            <input
-              type="text"
-              onChange={(e) => this.setState({ message: e.target.value })}
-              placeholder="add something in the database"
-              style={{ width: '200px' }}
-            />
-            <button onClick={() => this.putDataToDB(this.state.message)}>
-              ADD
             </button>
           </div>
           
