@@ -151,6 +151,14 @@ body {
   display: flex;
 }
 
+.img-container {
+  height: 200px;
+}
+
+.card-img-top {
+  background-size: contain;
+}
+
 .status {
   text-decoration: underline;
   color: green;
