@@ -78,13 +78,13 @@ class Projects extends Component {
                         : data.map((dat) => (
                             <div key={dat._id} className="col-6">
                                 <div class="card">
-                                    <img src={dat.image} class="card-img-top" alt="..."></img>
+                                    <img src={dat.image} class="card-img-top" alt=""></img>
                                     <div class="card-body">
                                         <h5 class="card-title">{dat.name}</h5>
                                         <p class="card-text">{dat.about}</p>
                                         <div className="row">
                                             <div className="col-6">
-                                                <a href={dat.link} class="btn btn-header">Source Code</a>
+                                                <a href={dat.link} class="btn btn-header">Source</a>
                                             </div>
                                             <div className="col-6">
                                                 <a href={dat.link} class="btn btn-header">Live</a>

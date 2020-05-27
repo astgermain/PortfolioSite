@@ -147,6 +147,10 @@ body {
   background: #2e333e;
 }
 
+.projectBoxes {
+  display: flex;
+}
+
 .status {
   text-decoration: underline;
   color: green;
