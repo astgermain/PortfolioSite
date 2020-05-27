@@ -153,10 +153,31 @@ body {
 
 .img-container {
   height: 200px;
+  background: #1b1e25;
+  box-shadow: 0 0 18px rgba(0,0,0,.2);
 }
 
 .card-img-top {
   background-size: contain;
+  width: auto;
+  height: 100%;
+}
+.card-text {
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 2px;
+  font-family: Staatliches,sans-serif;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.card-title {
+  margin-bottom: .75rem;
+  font-size: 2.5rem;
+  color: #fff;
+  letter-spacing: 4px;
+  font-family: Staatliches,sans-serif;
+  font-weight: 600;
 }
 
 .status {
