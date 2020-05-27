@@ -66,7 +66,7 @@ class Projects extends Component {
                         Projects
                     </h1>
                     <h2 className="subHeader">
-                        This is just a few of my projects.
+                        This is just a few of my personal projects.
                     </h2>
                     <h2 className="subHeader">
                         If there is no link to source code the project is under NDA, email me for a snippet.
@@ -86,7 +86,7 @@ class Projects extends Component {
                                         <p className="card-text">{dat.about}</p>
                                         <div className="row">
                                             <div className="col-12">
-                                                <a href={dat.link} className="btn btn-header">Source</a>
+                                                <a href={dat.link} className="btn btn-header">See More</a>
                                             </div>                                            
                                         </div>
                                     </div>
