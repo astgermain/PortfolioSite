@@ -155,6 +155,7 @@ body {
   height: 200px;
   background: #1b1e25;
   box-shadow: 0 0 18px rgba(0,0,0,.2);
+  overflow: hidden;
 }
 
 .card-img-top {
@@ -688,6 +689,10 @@ body {
   }
   .mainHeader {
     font-size: 3.5rem;
+  }
+  .about, .project, .register, .login, .dashboard {
+    width: 100%;
+    margin: auto;
   }
 }
 
