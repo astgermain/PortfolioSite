@@ -71,21 +71,30 @@ class Projects extends Component {
                     <h2 className="subHeader">
                         If there is no link to source code the project is under NDA, email me for a snippet.
                     </h2>
-                    {dl <= 0
-                    ? 'No Projects yet'
-                    //should map to state and let it rerender itself
-                    : data.map((dat) => (
-                        <li key={dat._id} style={{ padding: '10px' }}>
-                            <div class="card">
-                                <img src={dat.image} class="card-img-top" alt="..."></img>
-                                <div class="card-body">
-                                    <h5 class="card-title">{dat.name}</h5>
-                                    <p class="card-text">{dat.about}</p>
-                                    <a href="{dat.link}" class="btn btn-primary">Source Code</a>
+                    <div className="projectBoxes">
+                        {dl <= 0
+                        ? 'No Projects yet'
+                        //should map to state and let it rerender itself
+                        : data.map((dat) => (
+                            <div key={dat._id} className="col-6">
+                                <div class="card">
+                                    <img src={dat.image} class="card-img-top" alt="..."></img>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{dat.name}</h5>
+                                        <p class="card-text">{dat.about}</p>
+                                        <div className="row">
+                                            <div className="col-6">
+                                                <a href={dat.link} class="btn btn-header">Source Code</a>
+                                            </div>
+                                            <div className="col-6">
+                                                <a href={dat.link} class="btn btn-header">Live</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </Jump>
     );
