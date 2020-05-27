@@ -148,7 +148,7 @@ body {
 }
 
 .projectBoxes {
-  display: flex;
+  padding-top: 20px;
 }
 
 .img-container {
