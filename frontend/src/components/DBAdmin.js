@@ -52,7 +52,7 @@ class DBAdmin extends Component {
         name: this.state.name,
         link: this.state.link,
         image: this.state.image,
-        about: this.state.image,
+        about: this.state.about,
       });
     };
   
