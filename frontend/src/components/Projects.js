@@ -72,31 +72,29 @@ class Projects extends Component {
                         If there is no link to source code the project is under NDA, email me for a snippet.
                     </h2>
                     <div className="projectBoxes">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                {dl <= 0
-                                ? 'No Projects yet'
-                                //should map to state and let it rerender itself
-                                : data.map((dat) => (
-                                    <div key={dat._id} className="carousel-item col-6">
-                                        <div className="card">
-                                            <div className="img-container">
-                                                <img src={dat.image} className="card-img-top" alt=""></img>
-                                            </div>
-                                            <div className="card-body">
-                                                <h5 className="card-title">{dat.name}</h5>
-                                                <p className="card-text">{dat.about}</p>
-                                                <div className="row">
-                                                    <div className="col-6">
-                                                        <a href={dat.link} className="btn btn-header">Source</a>
-                                                    </div>                                            
-                                                </div>
+                        {dl <= 0
+                        ? 'No Projects yet'
+                        //should map to state and let it rerender itself
+                        : data.map((dat) => (
+                            <div className="row">
+                                <div key={dat._id} className="col-6">
+                                    <div className="card">
+                                        <div className="img-container">
+                                            <img src={dat.image} className="card-img-top" alt=""></img>
+                                        </div>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{dat.name}</h5>
+                                            <p className="card-text">{dat.about}</p>
+                                            <div className="row">
+                                                <div className="col-6">
+                                                    <a href={dat.link} className="btn btn-header">Source</a>
+                                                </div>                                            
                                             </div>
                                         </div>
                                     </div>
-                                ))}
+                                </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </Jump>
