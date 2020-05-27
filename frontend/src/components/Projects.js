@@ -76,13 +76,14 @@ class Projects extends Component {
                     //should map to state and let it rerender itself
                     : data.map((dat) => (
                         <li key={dat._id} style={{ padding: '10px' }}>
-                        <span style={{ color: 'gray' }}> name: </span> {dat.name} <br />
-                        <span style={{ color: 'gray' }}> link: </span> {dat.link} <br />
-                        <span style={{ color: 'gray' }}> image: </span> {dat.image} <br />
-                        <span style={{ color: 'gray' }}> about: </span> {dat.about} 
-                        <button onClick={() => this.deleteFromDB(dat._id)}>
-                            DELETE
-                        </button>
+                            <div class="card">
+                                <img src={dat.image} class="card-img-top" alt="..."></img>
+                                <div class="card-body">
+                                    <h5 class="card-title">{dat.name}</h5>
+                                    <p class="card-text">{dat.about}</p>
+                                    <a href="{dat.link}" class="btn btn-primary">Source Code</a>
+                                </div>
+                            </div>
                         </li>
                     ))}
                 </div>
