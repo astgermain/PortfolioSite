@@ -85,12 +85,9 @@ class Projects extends Component {
                                         <h5 className="card-title">{dat.name}</h5>
                                         <p className="card-text">{dat.about}</p>
                                         <div className="row">
-                                            <div className="col-6">
+                                            <div className="col-12">
                                                 <a href={dat.link} className="btn btn-header">Source</a>
-                                            </div>
-                                            <div className="col-6">
-                                                <a href={dat.link} className="btn btn-header">Live</a>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                     </div>
                                 </div>
