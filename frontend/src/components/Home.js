@@ -14,17 +14,35 @@ class Home extends Component {
         this.state = {
             email: "",
             loggedIn: false,
-            errors: {}
+            errors: {},
+            data: [],
+            id: 0,
+            message: null,
+            intervalIsSet: false,
+            idToDelete: null,
+            idToUpdate: null,
+            objectToUpdate: null,
+            name: null,
+            link: null,
+            image: null,
+            about: null,
         };
     }
 
-    componentDidMount(){
+    componentDidMount() {
+        this.getDataFromDb();
         
     }
-    componentDidUpdate(nextProps){
+    
+    componentWillUnmount() {
         
     }
-
+    getDataFromDb = () => {
+        fetch('/api/project')
+            .then((data) => data.json())
+            .then((res) => this.setState({ data: res.data }))
+            .catch(err => this.setState({ data: [] }))
+    };
     
 
     render(){
