@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 class DBAdmin extends Component {
     // initialize our state
     state = {
@@ -23,7 +24,6 @@ class DBAdmin extends Component {
     // changed and implement those changes into our UI
     componentDidMount() {
       this.getDataFromDb();
-      
     }
   
     // never let a process live forever
@@ -31,6 +31,8 @@ class DBAdmin extends Component {
     componentWillUnmount() {
       
     }
+
+    
   
     // just a note, here, in the front end, we use the id key of our data object
     // in order to identify which we want to Update or delete.
@@ -103,6 +105,7 @@ class DBAdmin extends Component {
       
       return (
         <div>
+          
           <ul>
             {dl <= 0
               ? 'NO DB ENTRIES YET'

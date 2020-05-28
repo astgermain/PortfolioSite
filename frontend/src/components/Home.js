@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { logoutUser } from "../actions/authActions"; 
 import Tada from 'react-reveal/Tada';
 import Zoom from 'react-reveal/Zoom';
-import { Link } from "react-router-dom";
 
 
 
@@ -29,14 +28,16 @@ class Home extends Component {
     
 
     render(){
-        
-        
+        let data = this.state.data
+        let dl = 0
+        try{
+            dl = data.length
+        }
+        catch{
+            dl = 0
+        }
         return(
                 <div className="home-content">
-                    <Zoom delay={7000}>
-                    <h2 className="subHeader3">^</h2>
-                        <h2 className="subHeader3">You can find my Github, LinkedIn, Resume, and Email above</h2>
-                    </Zoom>
                     <Tada>
                         <h1 className="mainHeader">Hi, I'm Andrew</h1>
                     </Tada>
@@ -50,11 +51,29 @@ class Home extends Component {
                         <h2 className="subHeader2">Take a look at some of my projects</h2>
                     </Zoom>
                     <Zoom delay={4500}>
-                        <Link to="/projects">
-                            <button className="btn btn-home">
-                                View Projects
-                            </button>
-                        </Link>
+                        <div className="row">
+                            {dl <= 0
+                            ? 'No Projects yet'
+                            //should map to state and let it rerender itself
+                            : data.map((dat) => (
+                                <div key={dat._id} className="col-sm-12 col-md-6 projectBoxes">
+                                    <div className="card">
+                                        <div className="img-container">
+                                            <img src={dat.image} className="card-img-top" alt=""></img>
+                                        </div>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{dat.name}</h5>
+                                            <p className="card-text">{dat.about}</p>
+                                            <div className="row">
+                                                <div className="col-12">
+                                                    <a href={dat.link} className="btn btn-header">See More</a>
+                                                </div>                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                         <div>
                         <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_10_4.pdf" target="_blank" rel="noopener noreferrer">
                             <button className="btn btn-home2">Resume</button>

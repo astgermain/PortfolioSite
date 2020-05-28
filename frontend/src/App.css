@@ -94,8 +94,8 @@ body {
   margin-bottom: 0px;
   font-size: 1.5rem;
   color: rgb(184, 184, 184);
-  letter-spacing: 4px;
-  font-family: Staatliches,sans-serif;
+  letter-spacing: 2px;
+  font-family: sans-serif;
   font-weight: bold;
 }
 
@@ -105,8 +105,8 @@ body {
   margin-top: 25px;
   font-size: 1.5rem;
   color: rgb(184, 184, 184);
-  letter-spacing: 4px;
-  font-family: Staatliches,sans-serif;
+  letter-spacing: 2px;
+  font-family: sans-serif;
   font-weight: bold;
 }
 .subHeader3 {

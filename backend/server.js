@@ -4,6 +4,8 @@ const apiPort = 4000
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const path = require('path')
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 const db = require('./db')
 
@@ -41,5 +43,18 @@ app.use((req, res, next) => {
 app.get("/", function(req, res) {
   res.send("Backend API Main Page");
 });
+
+// Socket.io
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('User Disconnected');
+  });
+  socket.on('example_message', function(msg){
+    console.log('message: ' + msg);
+  });
+});
+io.listen(8000)
 
 app.listen(apiPort, () => console.log('Express app start on port ' + apiPort))
