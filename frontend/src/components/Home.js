@@ -84,7 +84,7 @@ class Home extends Component {
                                             <p className="card-text">{dat.about}</p>
                                             <div className="row">
                                                 <div className="col-12">
-                                                    <a href={dat.link} className="btn btn-header">See More</a>
+                                                    <a href={dat.link} className="btn btn-header" target="_blank" rel="noopener noreferrer">See More</a>
                                                 </div>                                            
                                             </div>
                                         </div>
