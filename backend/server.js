@@ -3,8 +3,9 @@ const app = express()
 const apiPort = 4000
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const server = require('http').createServer()
-const io = require('socket.io')(server)
+const path = require('path')
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 const db = require('./db')
 
@@ -26,7 +27,16 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('User Disconnected');
+  });
+  socket.on('example_message', function(msg){
+    console.log('message: ' + msg);
+  });
+});
+io.listen(8000)
 
 app.use(passport.initialize())
 require('./config/passport')(passport)
@@ -45,6 +55,7 @@ app.get("/", function(req, res) {
   res.send("Backend API Main Page");
 });
 
+// Socket.io
 
 
 
