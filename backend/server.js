@@ -3,11 +3,11 @@ const app = express()
 const apiPort = 4000
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const http = require('http')
+const path = require('path')
+const http = require('http');
 const server = http.createServer(app)
-
 const io = require('socket.io')(server, {
-  path: '/chat/socket.io'
+  path: '/chat/'
 });
 
 const db = require('./db')

@@ -1,23 +1,12 @@
 const express = require("express")
 const morgan = require("morgan")
+const app = express();
 const compression = require('compression')
 const helmet = require('helmet')
-const http = require('http')
-const server = http.createServer(app)
-const io = require('socket.io')(server, {
-  path: '/chat/socket.io'
-});
-
-io.on('connection', (socket) => {
-  console.log('user connected');
-
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-});
 
 
-var app = express();
+
+
 app.use(helmet());
 app.use(compression()); 
 

@@ -5,7 +5,7 @@ import { logoutUser } from "../actions/authActions";
 import DBAdmin from './DBAdmin';
 import Slide from 'react-reveal/Slide';
 import openSocket from 'socket.io-client';
-const socket = openSocket('https://localhost:8000');
+const socket = openSocket('http://localhost:8000');
 class Dashboard extends Component {
     state = {
         opened: false
