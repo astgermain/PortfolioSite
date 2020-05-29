@@ -27,17 +27,6 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('User Disconnected');
-  });
-  socket.on('example_message', function(msg){
-    console.log('message: ' + msg);
-  });
-});
-io.listen(8000)
-
 app.use(passport.initialize())
 require('./config/passport')(passport)
 app.use('/api/users', validationRouter)
@@ -57,6 +46,15 @@ app.get("/", function(req, res) {
 
 // Socket.io
 
-
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('User Disconnected');
+  });
+  socket.on('example_message', function(msg){
+    console.log('message: ' + msg);
+  });
+});
+io.listen(8000)
 
 app.listen(apiPort, () => console.log('Express app start on port ' + apiPort))
