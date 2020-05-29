@@ -13,7 +13,7 @@ class Dashboard extends Component {
     };
     componentDidMount() {
         if(this.props.auth.isAuthenticated){
-            socket = openSocket('http://localhost:8000');
+            socket = openSocket(':8000');
             this.sendSocketIO = this.sendSocketIO.bind(this)
         }
     }
