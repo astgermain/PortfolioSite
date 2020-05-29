@@ -3,7 +3,7 @@ const app = express()
 const apiPort = 4000
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const server = require('https').createServer()
+const server = require('http').createServer()
 const io = require('socket.io')(server)
 
 const db = require('./db')
