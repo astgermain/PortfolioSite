@@ -2,7 +2,6 @@ const express = require("express");
 const morgan = require("morgan");
 const compression = require('compression');
 const helmet = require('helmet');
-const app = express()
 const server = http.createServer(app)
 const io = require('socket.io')(server, {
   path: '/chat/socket.io'
