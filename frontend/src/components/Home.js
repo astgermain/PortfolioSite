@@ -62,13 +62,13 @@ class Home extends Component {
                     <Zoom delay={1000}>
                         <h2 className="subHeader">I'm a professional software developer based out of the SF Bay Area</h2>
                     </Zoom>
-                    <Zoom delay={3000}>
+                    <Zoom delay={1000}>
                         <h2 className="subHeader">I am <span className="status">currently</span> looking for new opportunities!</h2>
                     </Zoom>
-                    <Zoom delay={4500}>
+                    <Zoom delay={2500}>
                         <h2 className="subHeader2">Take a look at some of my projects</h2>
                     </Zoom>
-                    <Zoom delay={4500}>
+                    <Zoom delay={2500}>
                         <div className="row">
                             {dl <= 0
                             ? 'No Projects yet'
