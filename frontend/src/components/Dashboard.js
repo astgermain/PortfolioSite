@@ -4,20 +4,13 @@ import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions";
 import DBAdmin from './DBAdmin';
 import Slide from 'react-reveal/Slide';
-import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:8000');
+
 class Dashboard extends Component {
     state = {
         opened: false
     };
     componentDidMount() {
-        if(this.props.auth.isAuthenticated){
-            this.sendSocketIO = this.sendSocketIO.bind(this)
-        }
-    }
 
-    sendSocketIO() {
-        socket.emit('example_message', 'demo')
     }
 
     onLogoutClick = e => {
@@ -35,9 +28,6 @@ class Dashboard extends Component {
         const dbAdminButton = this.state.opened ? 'Close DB Admin' : 'Open DB Admin'
         return (
             <Slide left>
-                <div>
-                    <button onClick={this.sendSocketIO}>Send Socket.io</button>
-                </div>
                 <div className="container dashboard">
                     <div className="row">
                         <div className="col s12 center-align">
