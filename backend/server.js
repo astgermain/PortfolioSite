@@ -4,8 +4,8 @@ const apiPort = 4000
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const path = require('path')
-const http = require('http').Server(app);
-const io = require('socket.io')(https);
+const http = require('https').Server(app);
+const io = require('socket.io')(http);
 
 const db = require('./db')
 

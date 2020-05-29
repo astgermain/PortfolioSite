@@ -5,15 +5,13 @@ import { logoutUser } from "../actions/authActions";
 import DBAdmin from './DBAdmin';
 import Slide from 'react-reveal/Slide';
 import openSocket from 'socket.io-client';
-var socket
-
+const socket = openSocket('https://localhost:8000');
 class Dashboard extends Component {
     state = {
         opened: false
     };
     componentDidMount() {
         if(this.props.auth.isAuthenticated){
-            socket = openSocket(':8000');
             this.sendSocketIO = this.sendSocketIO.bind(this)
         }
     }
