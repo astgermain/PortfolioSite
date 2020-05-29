@@ -3,7 +3,6 @@ const app = express()
 const apiPort = 4000
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const path = require('path')
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
@@ -27,6 +26,8 @@ app.use(session({
   saveUninitialized: false,
 }))
 
+
+
 app.use(passport.initialize())
 require('./config/passport')(passport)
 app.use('/api/users', validationRouter)
@@ -45,7 +46,6 @@ app.get("/", function(req, res) {
 });
 
 // Socket.io
-
 io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('disconnect', function(){
@@ -56,5 +56,6 @@ io.on('connection', function(socket){
   });
 });
 io.listen(8000)
+
 
 app.listen(apiPort, () => console.log('Express app start on port ' + apiPort))
