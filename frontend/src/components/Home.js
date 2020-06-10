@@ -59,12 +59,9 @@ class Home extends Component {
                     <Tada>
                         <h1 className="mainHeader">Hi, I'm Andrew</h1>
                     </Tada>
-                    <Zoom delay={1000}>
                         <h2 className="subHeader">I'm a professional software developer based out of the SF Bay Area</h2>
-                    </Zoom>
-                    <Zoom delay={1000}>
-                        <h2 className="subHeader">I am <span className="status">currently</span> looking for new opportunities!</h2>
-                    </Zoom>
+=                       <h2 className="subHeader">I am <span className="status">currently</span> looking for new opportunities!</h2>
+                    
                     <Zoom delay={2500}>
                         <h2 className="subHeader2">Take a look at some of my projects</h2>
                     </Zoom>
@@ -92,7 +89,7 @@ class Home extends Component {
                                 </div>
                             ))}
                         </div>
-                        <div>
+                        <div className="mobilePadding">
                         <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_10_4.pdf" target="_blank" rel="noopener noreferrer">
                             <button className="btn btn-home2">Resume</button>
                         </a>
