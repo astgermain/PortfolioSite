@@ -45,7 +45,7 @@ class ContactButtons extends Component {
                         </a>
                     </div>
                     <div className="col-6 colHoverEffectHelp">
-                        <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_10_4.pdf" target="_blank" rel="noopener noreferrer" className="contactA">   
+                        <a href="https://github.com/astgermain/andrewstgermainresume/blob/master/AndrewStGermainResume_6-11-20npp.pdf" target="_blank" rel="noopener noreferrer" className="contactA">   
                             <div className="resumeButtonPre" id="preload4">
                                 <FontAwesomeIcon icon={faFileAlt} className="resumeIcon"/>
                                 <span className="resumeLabel">Resume</span>
