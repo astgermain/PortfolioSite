@@ -55,7 +55,7 @@ class Home extends Component {
             dl = 0
         }
         return(
-                <div className="home-content">
+                <div className="container-fluid home-content">
                     <Tada>
                         <h1 className="mainHeader">Hi, I'm Andrew</h1>
                     </Tada>
